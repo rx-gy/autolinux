@@ -14,11 +14,14 @@
 * Embed authorized_keys file into preseed
 * Test ansible-pull bootstrap
 
+[^preseed-ex]: The theory is to start with limited [examples](https://dev1galaxy.org/viewtopic.php?id=1853) and add until the preseed works rather than start with the template that includes everything and removing bits until it breaks.
+
+
 ## Problem
 I want my current linux build to be documented and reproducible such that a complete rebuild, or a partial reacreation is not a time consuming trial and error effort.
 
 ## Overall approach
-This is essentially a configuration management and automated deploment problem.
+This is essentially a configuration management and automated deployment problem.
 
 The base linux is debian and aimed at sid. The configuration management and automation is handled by ansible-pull with git providing versioning. The bare metal component is built on a debian preseed that bootstraps the initial ansible pull for a _from scratch_ build. 
 
@@ -74,8 +77,3 @@ Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is de
 * Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
 * Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
 * Scripted ubuntu preseed generator [repo](https://github.com/covertsh/ubuntu-autoinstall-generator)
-
-[^iso-repack]: Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
-[^preseed-basic]: Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
-[^preseed-detail]: Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
-[^preseed-ex]: Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
