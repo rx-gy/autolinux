@@ -59,5 +59,5 @@ sudo debconf-get-selections --installer >> local-preseed.txt
 Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is debian bookworm host.
 
 ## References
-* [1] https://wiki.debian.org/RepackBootableISO
+* https://wiki.debian.org/RepackBootableISO
 
