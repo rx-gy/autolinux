@@ -44,8 +44,8 @@ Needs lots of work - barely readable. Everything excluding volume partitioning t
 ## mini.iso
 TODO: fix the grub text - currently barely readable on white image.
 
-## build_iso.sh[^iso-repack]
-This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc.
+## build_iso.sh
+This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc. (See [[#References]])
 
 ## update_preseed.sh
 This script is intended to enable rapid updating of the iso after a change to the preseed has been made.
@@ -69,6 +69,12 @@ sudo debconf-get-selections --installer >> local-preseed.txt
 Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is debian bookworm host.
 
 ## References
+* Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
+* Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
+* Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
+* Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
+* Scripted ubuntu preseed generator [repo](https://github.com/covertsh/ubuntu-autoinstall-generator)
+
 [^iso-repack]: Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
 [^preseed-basic]: Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
 [^preseed-detail]: Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
