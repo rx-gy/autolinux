@@ -45,7 +45,7 @@ Needs lots of work - barely readable. Everything excluding volume partitioning t
 TODO: fix the grub text - currently barely readable on white image.
 
 ## build_iso.sh
-This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc. (See [[#References]])
+This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc. (See [References](/README.md#references))
 
 ## update_preseed.sh
 This script is intended to enable rapid updating of the iso after a change to the preseed has been made.
