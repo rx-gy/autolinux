@@ -24,23 +24,23 @@ This git repo contains the intstructions everything for building and maintaining
 Develop a preseed file to describe the base configuration, then playbooks to build out the rest. Develop scripts to automate the updating and embedding of the preseed into an iso. Use [ventoy](https://ventoy.net/en/index.html) on a bootable USB to deploy base image.
 
 
-
-### preseed.cfg
+# autolinux - mechanised
+## preseed.cfg
 Needs lots of work - barely readable. Everything excluding volume partitioning to be automated. Ideally no desktop environment. The desktop setup should be installed and managed in ansible.
 
 > [!CAUTION]
 > Still builds the desktop environment
 
-### mini.iso
+## mini.iso
 TODO: fix the grub text - currently barely readable on white image.
 
-### build_iso.sh
+## build_iso.sh
 This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc.
 
-### update_preseed.sh
+## update_preseed.sh
 This script is intended to enable rapid updating of the iso after a change to the preseed has been made.
 
-### Pre-requisites and iso sources
+## Pre-requisites and iso sources
 ```
 wget https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso
 sudo apt install p7zip-full p7zip-rar genisoimage fakeroot xorriso isolinux binutils squashfs-tools
