@@ -59,5 +59,7 @@ sudo debconf-get-selections --installer >> local-preseed.txt
 Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is debian bookworm host.
 
 ## References
-* https://wiki.debian.org/RepackBootableISO
-
+* Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
+* Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
+* Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
+* Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
