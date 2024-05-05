@@ -34,13 +34,19 @@ Needs lots of work - barely readable. Everything excluding volume partitioning t
 ### mini.iso
 TODO: fix the grub text - currently barely readable on white image.
 
+### build_iso.sh
+This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc.
 
+### update_preseed.sh
+This script is intended to enable rapid updating of the iso after a change to the preseed has been made.
 
 ### Pre-requisites and iso sources
 ```
 wget https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso
 sudo apt install p7zip-full p7zip-rar genisoimage fakeroot xorriso isolinux binutils squashfs-tools
 ```
+> [!NOTE]
+> Run against debian bookworm
 
 
 ## Useful
