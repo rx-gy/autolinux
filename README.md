@@ -51,7 +51,7 @@ Develop a preseed file to describe the base configuration, then playbooks to bui
 
 # autolinux - mechanised
 ## preseed.cfg
-Needs lots of work - barely readable. Everything excluding volume partitioning to be automated. Ideally no desktop environment. The desktop setup should be installed and managed in ansible.
+Reasonably terse and readable preseed. I’m not sure I’m happy with the partitioning and grub installation. I suspect using LVM is the problem. 
 
 ## mini.iso
 TODO: fix the grub text - currently barely readable on white image.
