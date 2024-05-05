@@ -12,9 +12,9 @@ mbr_template=isohdpfx.bin
 initrd=${new_files}/initrd
 
 
-rm -f $mbr_template
-rm -rf $new_files
-rm -f $new_iso
+#rm -f $mbr_template
+#rm -rf $new_files
+#rm -f $new_iso
 
 
 # Unpack originals
