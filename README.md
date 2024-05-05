@@ -2,6 +2,9 @@
 
 ![Logo](/splash.png)
 
+> [!CAUTION]
+> This is built for my system and may break yours or worse. 
+
 ## Status - V0.1 - incomplete/unstable
 - [x] basic maintenance processes scripted
 - [x] bootable preseeded iso 
