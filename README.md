@@ -4,7 +4,7 @@
 
 ## Status - V0.1 - incomplete/unstable
 **TASKS**
-* Cull preseed back to headings at [^preseed-ex].
+* Cull preseed back to headings[^preseed-ex].
 
 ## Problem
 I want my current linux build to be documented and reproducible such that a complete rebuild, or a partial reacreation is not a time consuming trial and error effort.
