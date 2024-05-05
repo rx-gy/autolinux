@@ -5,16 +5,16 @@
 localpath="$(pwd)"
 
 # The example names get mapped to their roles here
-orig_iso=${localpath}$1
-new_files=${localpath}$2
-new_iso=${localpath}$3
+orig_iso=${localpath}/$1
+new_files=${localpath}/$2
+new_iso=${localpath}/$3
 mbr_template=isohdpfx.bin
 initrd=${new_files}/initrd
 
 
-#rm -f $mbr_template
-#rm -rf $new_files
-#rm -f $new_iso
+#rm  $mbr_template
+#rm -r $new_files
+#rm  $new_iso
 
 
 # Unpack originals
