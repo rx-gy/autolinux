@@ -3,6 +3,9 @@
   become: true
 
   tasks:
-  - name: Install htop
+  - name: Install gdm
     apt:
-      name: htop
+      name: gdm3
+  - name: Install i3wm
+    apt:
+      name: i3
