@@ -3,6 +3,8 @@
 ![Logo](/splash.png)
 
 ## Status - V0.1 - incomplete/unstable
+**TASKS**
+* Cull preseed back to headings at [^4].
 
 ## Problem
 I want my current linux build to be documented and reproducible such that a complete rebuild, or a partial reacreation is not a time consuming trial and error effort.
@@ -59,7 +61,7 @@ sudo debconf-get-selections --installer >> local-preseed.txt
 Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is debian bookworm host.
 
 ## References
-* Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
-* Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
-* Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
-* Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
+[^1]: Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
+[^2]: Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
+[^3]: Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
+[^4]: Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
