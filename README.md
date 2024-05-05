@@ -3,8 +3,16 @@
 ![Logo](/splash.png)
 
 ## Status - V0.1 - incomplete/unstable
+- [x] basic maintenance processes scripted
+- [x] bootable preseeded iso 
+- [ ] preseed deployment concise and maintainable
+- [ ] ansible-pull bootstrap from iso
+- [ ] ansible-pull for live system updates
+
 **TASKS**
-* Cull preseed back to headings[^preseed-ex].
+* Cull preseed back to headings[^preseed-ex]
+* Embed authorized_keys file into preseed
+* Test ansible-pull bootstrap
 
 ## Problem
 I want my current linux build to be documented and reproducible such that a complete rebuild, or a partial reacreation is not a time consuming trial and error effort.
