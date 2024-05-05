@@ -5,19 +5,28 @@
 > [!CAUTION]
 > This is built for my system and may break yours or worse. 
 
-## Status - V0.1 - incomplete/unstable
+## Status - V0.2 - incomplete/unstable
 - [x] basic maintenance processes scripted
 - [x] bootable preseeded iso 
-- [ ] preseed deployment concise and maintainable
+- [x] preseed deployment concise and maintainable
 - [ ] ansible-pull bootstrap from iso
 - [ ] ansible-pull for live system updates
 
+## Ansible wishlist
+- [ ] i3wm with specific settings
+- [ ] oh-my-zsh and powerlevel10k
+- [ ] syncthing
+- [ ] grub splash 
+
+
 **TASKS**
-* Cull preseed back to headings[^preseed-ex]
 * Embed authorized_keys file into preseed
 * Test ansible-pull bootstrap
+> [!NOTE]
+> Asks for confirmation of partitioning - it isn't meant to.
+> It is not doing boot stuff as expected - boots, but is doing odd efi things to other disks. *beware*
 
-[^preseed-ex]: The theory is to start with limited [examples](https://dev1galaxy.org/viewtopic.php?id=1853) and add until the preseed works rather than start with the template that includes everything and removing bits until it breaks.
+Only asks for confirmation of partitioning - although it isn't meant to. 
 
 
 ## Problem
@@ -43,9 +52,6 @@ Develop a preseed file to describe the base configuration, then playbooks to bui
 # autolinux - mechanised
 ## preseed.cfg
 Needs lots of work - barely readable. Everything excluding volume partitioning to be automated. Ideally no desktop environment. The desktop setup should be installed and managed in ansible.
-
-> [!CAUTION]
-> Still builds the desktop environment
 
 ## mini.iso
 TODO: fix the grub text - currently barely readable on white image.
