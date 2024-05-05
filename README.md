@@ -1,6 +1,6 @@
 # Autolinux - reduce time spent **re**building
 
-[[splash.png]]
+[[/splash.png]]
 
 ## Status - V0.1 - incomplete/unstable
 
