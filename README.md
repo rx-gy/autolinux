@@ -1,4 +1,7 @@
-# Autolinux - reduce time spent *re*building
+# Autolinux - reduce time spent **re**building
+
+[[splash.png]]
+
 ## Status - V0.1 - incomplete/unstable
 
 ## Problem
@@ -25,8 +28,12 @@ Develop a preseed file to describe the base configuration, then playbooks to bui
 ### preseed.cfg
 Needs lots of work - barely readable. Everything excluding volume partitioning to be automated. Ideally no desktop environment. The desktop setup should be installed and managed in ansible.
 
-#### Issues
-* Still builds the desktop environment
+> [!CAUTION]
+> Still builds the desktop environment
+
+### mini.iso
+TODO: fix the grub text - currently barely readable on white image.
+
 
 
 ### Pre-requisites and iso sources
