@@ -3,9 +3,9 @@
   become: true
 
   tasks:
-  - name: Install gdm
-    apt:
-      name: gdm3
   - name: Install i3wm
     apt:
       name: i3
+  - name: Install a display manager
+    apt:
+      name: lightdm
