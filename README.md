@@ -3,7 +3,7 @@
 ![Logo](/splash.png)
 
 > [!CAUTION]
-> This is built for my system and may break yours or worse. 
+> This is built for my system and may break yours or worse. It will overwrite your disk during install, and doesn't give you a chance to confirm it is the correct disk.
 
 ## Status - V0.2 - incomplete/unstable
 - [x] basic maintenance processes scripted
@@ -55,6 +55,8 @@ Reasonably terse and readable preseed. I’m not sure I’m happy with the parti
 
 ## mini.iso
 TODO: fix the grub text - currently barely readable on white image.
+> [!NOTE]
+> The installer only works while the kernel is relatively synchronised with the sid repos. This means you shouldn't assume an installer built now will work in a month.
 
 ## build_iso.sh
 This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc. (See [References](/README.md#references))

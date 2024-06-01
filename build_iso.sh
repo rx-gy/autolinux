@@ -4,9 +4,12 @@
 base_path="$(pwd)"
 
 # The example names get mapped to their roles here
-orig_iso=${base_path}$1
-new_files=${base_path}$2
-new_iso=${base_path}$3
+orig_iso=${base_path}/$1
+new_files=${base_path}/$2
+new_iso=${base_path}/$3
+orig_iso=${base_path}/mini.iso
+new_files=${base_path}/isofiles
+new_iso=${base_path}/debsid.iso
 mbr_template=isohdpfx.bin
 
 # Extract MBR template file to disk

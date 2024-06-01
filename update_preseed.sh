@@ -8,13 +8,16 @@ localpath="$(pwd)"
 orig_iso=${localpath}/$1
 new_files=${localpath}/$2
 new_iso=${localpath}/$3
+orig_iso=${localpath}/mini.iso
+new_files=${localpath}/isofiles
+new_iso=${localpath}/debsid.iso
 mbr_template=isohdpfx.bin
 initrd=${new_files}/initrd
 
 
-#rm  $mbr_template
-#rm -r $new_files
-#rm  $new_iso
+rm  $mbr_template
+rm -r $new_files
+rm  $new_iso
 
 
 # Unpack originals
