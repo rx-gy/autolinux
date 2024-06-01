@@ -1,0 +1,11 @@
+[Unit]
+Description=ansible onboot service
+After=systemd-networkd-wait-online.service
+Wants=systemd-networkd-wait-online.service
+
+[Service]
+ExecStart=/usr/bin/ansible-pull -U https://github.com/rx-gy/autolinux.git
+Type=simple
+
+[Install]
+WantedBy=default.target
