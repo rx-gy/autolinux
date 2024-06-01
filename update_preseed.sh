@@ -25,6 +25,7 @@ rm  $new_iso
 gunzip ${initrd}.gz
 
 echo preseed.cfg | cpio -H newc -o -A -F $initrd
+echo ansible.service | cpio -H newc -o -A -F $initrd
 
 gzip ${initrd}
 

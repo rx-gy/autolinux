@@ -9,3 +9,6 @@
   - name: Install a display manager
     apt:
       name: lightdm
+  - name: Basic tools
+    apt:
+      name: htop

@@ -9,7 +9,7 @@
 - [x] basic maintenance processes scripted
 - [x] bootable preseeded iso 
 - [x] preseed deployment concise and maintainable
-- [ ] ansible-pull bootstrap from iso
+- [x] ansible-pull bootstrap from iso
 - [ ] ansible-pull for live system updates
 
 ## Ansible wishlist
@@ -36,6 +36,8 @@ I want my current linux build to be documented and reproducible such that a comp
 This is essentially a configuration management and automated deployment problem.
 
 The base linux is debian and aimed at sid. The configuration management and automation is handled by ansible-pull with git providing versioning. The bare metal component is built on a debian preseed that bootstraps the initial ansible pull for a _from scratch_ build. 
+
+Currently ansible pull is being added as a one-shot service that is run at boot time. The system will not have the ansible components installed until after the first boot has occured.
 
 This git repo contains the intstructions everything for building and maintaining my linux environments - at some point the ansible playbooks will likely be separated.
 
