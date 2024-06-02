@@ -1,3 +1,6 @@
 iso
 mini.iso
 *~
+isohdpfx.bin
+*.bak
+debsid.iso
