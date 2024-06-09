@@ -2,7 +2,7 @@
 
 ![Logo](/splash.png)
 
-> [!CAUTION]
+> [!WARNING]
 > This is built for my system and may break yours or worse. It will overwrite your disk during install, and doesn't give you a chance to confirm it is the correct disk.
 
 ## Status - V1.0 - initial release
@@ -60,19 +60,17 @@ TODO: fix the grub text - currently barely readable on white image.
 > [!NOTE]
 > The installer only works while the kernel is relatively synchronised with the sid repos. This means you shouldn't assume an installer built now will work in a month.
 
-## build_iso.sh
-This script builds an iso somewhat manually. Makes a whole bunch of assuptions about source and folders etc. (See [References](/README.md#references))
-
 ## update_preseed.sh
-This script is intended to enable rapid updating of the iso after a change to the preseed has been made.
+This script handles creation and updates of the customised debian sid iso.
 
 ## Pre-requisites and iso sources
 ```
 wget https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso
 sudo apt install p7zip-full p7zip-rar genisoimage fakeroot xorriso isolinux binutils squashfs-tools
 ```
+
 > [!NOTE]
-> Run against debian bookworm
+> This is managed by update_preseed.sh
 
 
 ## Useful
@@ -83,6 +81,25 @@ sudo debconf-get-selections --installer >> local-preseed.txt
 
 ## Process notes
 Based on debian [sid](https://wiki.debian.org/DebianUnstable). Dev machine is debian bookworm host.
+
+### Handling secrets
+`ansible-vault` is used to manage sensitive data. To enable unattended running, a vault password [is used](https://docs.ansible.com/ansible/latest/vault_guide/vault_encrypting_content.html#creating-encrypted-variables). 
+`update_pressed.sh` assumes you have a password file named `vault_pass`.
+
+On linux - one way to create your vault_pass is:
+```
+tr -dc "[:graph:]" < /dev/random | head -c 1024 | xargs -0 > vault_pass
+```
+
+> [!CAUTION]
+> Keep vault_pass secret - this means your iso/install disk need to be managed appropriately!
+
+
+Creating a secret to embed in playbook:
+```
+ansible-vault encrypt_string --vault-password-file=vault_pass 'test-value' --name 'the_secret'
+```
+
 
 ## References
 * Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
