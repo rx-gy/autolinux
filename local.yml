@@ -1,14 +1,16 @@
-- hosts: localhost
+- hosts: all
   connection: local
   become: true
+  pre_tasks:
+    - name: pre-run | update package cache
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+# run roles
 
-  tasks:
-  - name: Install i3wm
-    apt:
-      name: i3
-  - name: Install a display manager
-    apt:
-      name: lightdm
-  - name: Basic tools
-    apt:
-      name: htop
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
+

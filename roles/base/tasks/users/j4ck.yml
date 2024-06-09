@@ -1,0 +1,213 @@
+#- name: users | remove defaults
+#  tags: users,remove
+#  user:
+#    name: debian
+#    state: absent
+
+- name: users | j4ck | create group
+  tags: groups,j4ck,users
+  group:
+    name: j4ck
+    state: present
+
+- name: users | j4ck | create user
+  tags: j4ck,sudo,users
+  user:
+    name: j4ck
+    group: j4ck
+    groups: adm,audio,sudo
+    state: present
+    comment: "Jack"
+    password: "{{ j4ck_passwd }}"
+    shell: /bin/bash
+
+- name: users | j4ck | create .ssh directory
+  tags: dotfiles,j4ck,ssh,users
+  file:
+    path: "{{ item.dir }}"
+    state: directory
+    owner: j4ck
+    group: j4ck
+    mode: 0700
+  with_items:
+    - { dir: '/home/j4ck/.ssh' }
+
+#- name: users | j4ck | add public key
+#  tags: dotfiles,j4ck,ssh,ssh-keys,users
+#  authorized_key:
+#    user: j4ck
+#    key: "{{ item }}"
+#  with_file:
+#    - users/j4ck/ssh/j4ck_id_ed25519.pub
+#
+#- name: users | j4ck | create config directories
+#  tags: dotfiles,j4ck,tmux,users,vim,zsh
+#  file:
+#    path: /home/j4ck/{{ item.dir }}
+#    state: directory
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0700
+#  with_items:
+#    - { dir: '.bash' }
+#    - { dir: '.config' }
+#    - { dir: '.config/htop' }
+#    - { dir: '.config/mc' }
+#    - { dir: '.tmux' }
+#    - { dir: '.tmux/config' }
+#    - { dir: '.tmux/plugins' }
+#    - { dir: '.vim' }
+#    - { dir: '.vim/autoload' }
+#    - { dir: '.vim/bundle' }
+#    - { dir: '.vim/colors' }
+#    - { dir: '.vim/ftplugin' }
+#    - { dir: '.zsh' }
+#
+#- name: users | j4ck | copy tmux config (server version)
+#  tags: dotfiles,users,j4ck,tmux,users,vim,zsh
+#  copy:
+#    src: users/j4ck/tmux/tmux.conf.server
+#    dest: /home/j4ck/.tmux.conf
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  when: "'server' not in group_names"
+#
+#- name: users | j4ck | copy tmux config (workstation version)
+#  tags: dotfiles,users,j4ck,tmux,users,vim,zsh
+#  copy:
+#    src: users/j4ck/tmux/tmux.conf.workstation
+#    dest: /home/j4ck/.tmux.conf
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  when: "'server' in group_names"
+#
+#- name: users | j4ck | copy dotfiles
+#  tags: dotfiles,users,j4ck,tmux,users,vim,zsh
+#  copy:
+#    src: users/j4ck/{{ item.src }}
+#    dest: /home/j4ck/{{ item.dest }}
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  with_items:
+#    - { src: 'bash/bash_aliases', dest: '.bash/bash_aliases' }
+#    - { src: 'bash/bash_profile', dest: '.bash_profile' }
+#    - { src: 'bash/bash_prompt', dest: '.bash/bash_prompt' }
+#    - { src: 'bash/bash_functions', dest: '.bash/bash_functions' }
+#    - { src: 'bash/bashrc', dest: '.bashrc' }
+#    - { src: 'bash/profile', dest: '.profile' }
+#    - { src: 'git/gitconfig', dest: '.gitconfig' }
+#    - { src: 'htop/htoprc', dest: '.config/htop/htoprc' }
+#    - { src: 'inputrc', dest: '.inputrc' }
+#    - { src: 'mc/mc.ini', dest: '.config/mc/ini' }
+#    - { src: 'vim/vimrc', dest: '.vimrc' }
+#    - { src: 'zsh/zshrc', dest: '.zshrc' }
+#
+#- name: users | j4ck | clone tmux-completion plugin repository
+#  tags: dotfiles,j4ck,users,tmux
+#  git:
+#    repo: https://github.com/srsudar/tmux-completion.git
+#    dest: /home/j4ck/.tmux/plugins/completion
+#    force: yes
+#  notify: update_tmux_plugin_perms
+#
+#- name: users | j4ck | clone tmux-continuum plugin repository
+#  tags: dotfiles,j4ck,users,tmux
+#  git:
+#    repo: https://github.com/tmux-plugins/tmux-continuum
+#    dest: /home/j4ck/.tmux/plugins/continuum
+#    force: yes
+#  notify: update_tmux_plugin_perms
+#
+#- name: users | j4ck | clone tmux-resurrect plugin repository
+#  tags: dotfiles,j4ck,users,tmux
+#  git:
+#    repo: https://github.com/tmux-plugins/tmux-resurrect
+#    dest: /home/j4ck/.tmux/plugins/resurrect
+#    force: yes
+#  notify: update_tmux_plugin_perms
+#
+#- name: users | j4ck | copy individual zsh config files
+#  tags: dotfiles,j4ck,users,zsh
+#  copy:
+#    src: users/j4ck/zsh/{{ item.src }}
+#    dest: /home/j4ck/.zsh/{{ item.src }}
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  with_items:
+#    - { src: 'aliases.zsh' }
+#    - { src: 'bindkey.zsh' }
+#    - { src: 'completion.zsh' }
+#    - { src: 'exports.zsh' }
+#    - { src: 'functions.zsh' }
+#    - { src: 'history.zsh' }
+#    - { src: 'path.zsh' }
+#    - { src: 'plugins.zsh' }
+#    - { src: 'prompt.zsh' }
+#    - { src: 'setopt.zsh' }
+#    - { src: 'theming.zsh' }
+#
+#- name: users | j4ck | copy vim ftype files
+#  tags: dotfiles,j4ck,users,vim
+#  copy:
+#    src: users/j4ck/vim/{{ item.src }}
+#    dest: /home/j4ck/.vim/ftplugin/{{ item.src }}
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  with_items:
+#    - { src: 'cmake.vim' }
+#    - { src: 'cpp.vim' }
+#    - { src: 'html.vim' }
+#    - { src: 'perl.vim' }
+#    - { src: 'python.vim' }
+#    - { src: 'ruby.vim' }
+#    - { src: 'sql.vim' }
+#    - { src: 'xml.vim' }
+#
+#- name: users | j4ck | copy vim color files
+#  tags: dotfiles,j4ck,users,vim
+#  copy:
+#    src: users/j4ck/vim/{{ item.src }}
+#    dest: /home/j4ck/.vim/colors/{{ item.src }}
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0600
+#  with_items:
+#    - { src: 'bubblegum-256-dark.vim' }
+#    - { src: 'darktango.vim' }
+#    - { src: 'jellybeans.vim' }
+#    - { src: 'xoria256.vim' }
+#    - { src: 'zenburn.vim' }
+#
+#- name: users | j4ck | install pathogen
+#  tags: dotfiles,j4ck,users,vim
+#  copy:
+#    src: users/j4ck/vim/{{ item.src }}
+#    dest: "{{ item.dest }}"
+#    owner: j4ck
+#    group: j4ck
+#    mode: 0700
+#  with_items:
+#    - { src: 'pathogen.vim', dest: '/home/j4ck/.vim/autoload/pathogen.vim' }
+#
+#- name: users | j4ck | checkout git repositories
+#  tags: git,users,j4ck
+#  become: yes
+#  git:
+#    repo: "{{ item.repo }}"
+#    dest: "{{ item.dest }}"
+#    force: yes
+#  with_items:
+#    - { repo: 'https://github.com/ctrlpvim/ctrlp.vim.git', dest: '/home/j4ck/.vim/bundle/ctrlp.vim' }
+#    - { repo: 'https://github.com/davidhalter/jedi-vim.git', dest: '/home/j4ck/.vim/bundle/jedi-vim' }
+#    - { repo: 'https://github.com/pearofducks/ansible-vim', dest: '/home/j4ck/.vim/bundle/ansible-vim' }
+#    - { repo: 'https://github.com/rhysd/vim-grammarous.git', dest: '/home/j4ck/.vim/bundle/vim-grammarous' }
+#    - { repo: 'https://github.com/ron89/thesaurus_query.vim', dest: '/home/j4ck/.vim/bundle/thesaurus_query' }
+#    - { repo: 'https://github.com/scrooloose/nerdtree.git', dest: '/home/j4ck/.vim/bundle/nerdtree' }
+#    - { repo: 'https://github.com/tpope/vim-obsession.git', dest: '/home/j4ck/.vim/bundle/vim-obsession' }
+#    - { repo: 'https://github.com/vim-syntastic/syntastic.git', dest: '/home/j4ck/.vim/bundle/syntastic' }
+#  notify: update_vim_bundle_perms

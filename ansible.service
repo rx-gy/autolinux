@@ -4,7 +4,7 @@ After=systemd-networkd-wait-online.service
 Wants=systemd-networkd-wait-online.service
 
 [Service]
-ExecStart=/usr/bin/ansible-pull -U https://github.com/rx-gy/autolinux.git
+ExecStart=/usr/bin/ansible-pull -U https://github.com/rx-gy/autolinux.git --vault-password-file=/root/.local/vault_pass
 Type=simple
 
 [Install]

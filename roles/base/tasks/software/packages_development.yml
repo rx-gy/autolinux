@@ -1,0 +1,9 @@
+- name: system setup | development packages | install packages
+  tags: dev,development,packages,python
+  package:
+    name:
+      - git
+      - python-setuptools
+      - python3-virtualenv
+      - tig
+    state: latest

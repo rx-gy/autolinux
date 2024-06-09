@@ -26,6 +26,7 @@ gunzip ${initrd}.gz
 
 echo preseed.cfg | cpio -H newc -o -A -F $initrd
 echo ansible.service | cpio -H newc -o -A -F $initrd
+echo vault_pass | cpio -H newc -o -A -F $initrd
 
 gzip ${initrd}
 
