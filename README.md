@@ -18,17 +18,6 @@
 - [ ] syncthing
 - [ ] grub splash 
 
-
-**TASKS**
-* Embed authorized_keys file into preseed
-* Test ansible-pull bootstrap
-> [!NOTE]
-> Asks for confirmation of partitioning - it isn't meant to.
-> It is not doing boot stuff as expected - boots, but is doing odd efi things to other disks. *beware*
-
-Only asks for confirmation of partitioning - although it isn't meant to. 
-
-
 ## Problem
 I want my current linux build to be documented and reproducible such that a complete rebuild, or a partial reacreation is not a time consuming trial and error effort.
 
@@ -53,7 +42,7 @@ Develop a preseed file to describe the base configuration, then playbooks to bui
 
 # autolinux - mechanised
 ## preseed.cfg
-Reasonably terse and readable preseed. I’m not sure I’m happy with the partitioning and grub installation. I suspect using LVM is the problem. 
+Reasonably terse and readable preseed. Very basic partitioning. Only user input requested is the hostname.
 
 ## debside.iso (the modified mini.iso)
 TODO: fix the grub text - currently barely readable on white image.
@@ -61,7 +50,7 @@ TODO: fix the grub text - currently barely readable on white image.
 > The installer only works while the kernel is relatively synchronised with the sid repos. This means you shouldn't assume an installer built now will work in a month.
 
 ## update_preseed.sh
-This script handles creation and updates of the customised debian sid iso.
+This script handles creation and updates of the customised debian sid iso. Pulls the most recent netboot iso.
 
 ## Pre-requisites and iso sources
 ```
