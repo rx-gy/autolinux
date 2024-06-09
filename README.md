@@ -12,9 +12,12 @@
 - [x] ansible-pull bootstrap from iso
 - [x] ansible-pull for live system updates
 
-## Ansible wishlist
-- [ ] i3wm with specific settings
+## Ansible tasks
+- [ ] fonts
+- [ ] urxvt settings
 - [ ] oh-my-zsh and powerlevel10k
+- [ ] i3wm with basic customisation
+- [ ] possible switch to dwm...
 - [ ] syncthing
 - [ ] grub splash 
 
@@ -106,5 +109,5 @@ ansible-vault encrypt_string --vault-password-file=vault_pass 'test-value' --nam
 
 ### ansible
 * [Ansible-vault](https://docs.ansible.com/ansible/latest/vault_guide/vault_encrypting_content.html)
-* Important pre-reading - really helps make sense of the directory [layout](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#id11)
+* Important pre-reading - really helps make sense of the directory [layout](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#directory-layout)
 * The template for my approach - [LearnLinuxTV](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
