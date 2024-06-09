@@ -13,6 +13,7 @@
 - [x] ansible-pull for live system updates
 
 ## Ansible tasks
+- [ ] ssh config
 - [ ] fonts
 - [ ] urxvt settings
 - [ ] oh-my-zsh and powerlevel10k

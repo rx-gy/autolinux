@@ -32,6 +32,16 @@
   with_items:
     - { dir: '/home/j4ck/.ssh' }
 
+- name: users | j4ck | copy authorized_keys
+  tags: users,j4ck,ssh
+  copy:
+    src: users/j4ck/authorized_keys
+    dest: /home/j4ck/.ssh/
+    owner: j4ck
+    group: j4ck
+    mode: 0440
+
+
 #- name: users | j4ck | add public key
 #  tags: dotfiles,j4ck,ssh,ssh-keys,users
 #  authorized_key:
