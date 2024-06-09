@@ -91,6 +91,12 @@ On linux - one way to create your vault_pass is:
 tr -dc "[:graph:]" < /dev/random | head -c 1024 | xargs -0 > vault_pass
 ```
 
+To generate a linux password hash for use with ansible users module:
+```
+openssl passwd -6
+```
+
+
 > [!CAUTION]
 > Keep vault_pass secret - this means your iso/install disk need to be managed appropriately!
 
