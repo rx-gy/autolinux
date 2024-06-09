@@ -8,7 +8,7 @@ localpath="$(pwd)"
 orig_iso=${localpath}/$1
 new_files=${localpath}/$2
 new_iso=${localpath}/$3
-orig_iso=${localpath}/mini.iso
+orig_iso=${localpath}/netboot/mini.iso
 new_files=${localpath}/isofiles
 new_iso=${localpath}/debsid.iso
 mbr_template=isohdpfx.bin
@@ -20,8 +20,28 @@ rm -r $new_files
 rm  $new_iso
 
 
+# check we have latest mini.iso
+rm MD5SUMS
+wget https://d-i.debian.org/daily-images/amd64/daily/MD5SUMS
+if md5sum -c MD5SUMS --ignore-missing ;
+then
+	echo "mini.iso is up to date"
+else
+	echo "getting most recent mini.iso"
+	rm netboot/mini.iso
+	wget https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso --directory-prefix=netboot/
+fi
+
+if md5sum -c MD5SUMS --ignore-missing
+then
+	echo "mini.iso is good"
+else
+	echo "failed checksum"
+	exit
+fi
+
 # Unpack originals
-7z x -y mini.iso -o$(basename $new_files)
+7z x -y netboot/mini.iso -o$(basename $new_files)
 gunzip ${initrd}.gz
 
 echo preseed.cfg | cpio -H newc -o -A -F $initrd

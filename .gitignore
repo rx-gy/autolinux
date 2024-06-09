@@ -5,3 +5,5 @@ isohdpfx.bin
 *.bak
 debsid.iso
 vault_pass
+MD5SUMS
+netboot/
