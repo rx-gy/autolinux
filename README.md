@@ -97,8 +97,14 @@ ansible-vault encrypt_string --vault-password-file=vault_pass 'test-value' --nam
 
 
 ## References
+### debian preseed
 * Repacking iso images - [debian doco](https://wiki.debian.org/RepackBootableISO)
 * Preseed [basics](https://wiki.debian.org/DebianInstaller/Preseed)
 * Preseed in massive [detail](https://preseed.debian.net/debian-preseed/sid/amd64-main-full.txt)
 * Possibly usefully concise preseed [examples](https://dev1galaxy.org/viewtopic.php?id=1853)
 * Scripted ubuntu preseed generator [repo](https://github.com/covertsh/ubuntu-autoinstall-generator)
+
+### ansible
+* [Ansible-vault](https://docs.ansible.com/ansible/latest/vault_guide/vault_encrypting_content.html)
+* Important pre-reading - really helps make sense of the directory [layout](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#id11)
+* The template for my approach - [LearnLinuxTV](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
