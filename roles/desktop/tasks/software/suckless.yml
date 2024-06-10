@@ -1,13 +1,17 @@
 - name: desktop | suckless - ensure dependencies
   tags: desktop,suckless
   apt:
-    pkg: dwm
+    pkg: 
+      - dwm
+      - suckless-tools
     state: build-dep
 
-- name: ensure git directory exists
-  file:
-    path: /home/j4ck/GIT/suckless
-    state: directory
+
+- name: desktop | x11 | minimal xinitrc
+  tags: desktop,x11,xorg,xinitrc
+  copy:
+    src: users/j4ck/xinitrc
+    dst: /home/j4ck/.xinitrc
     owner: j4ck
     group: j4ck
     mode: 0700

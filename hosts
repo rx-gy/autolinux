@@ -5,3 +5,7 @@ all:
 graphical:
    hosts:
       mars
+
+nvidia:
+   hosts:
+      mars

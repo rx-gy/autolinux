@@ -1,0 +1,20 @@
+- name: desktop | nvidia drivers
+  tags: desktop,nvidia,drivers,firmware
+  apt:
+    name: 
+      - nvidia-driver
+      - firmware-misc-nonfree
+    state: latest
+    when: inventory_hostname in groups['nvidia']
+
+- name: desktop | x11 | xorg | x server
+  tags: desktop,x11,xorg,xserver
+  apt:
+    name: 
+      - xserver-xorg-core
+      - xserver-xorg-input-evdev
+      - x11-xserver-utils
+      - x11-xkb-utils
+      - x11-utils
+      - xinit
+    state: latest
