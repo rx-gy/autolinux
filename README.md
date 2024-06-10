@@ -91,9 +91,12 @@ On linux - one way to create your vault_pass is:
 tr -dc "[:graph:]" < /dev/random | head -c 1024 | xargs -0 > vault_pass
 ```
 
-
 > [!CAUTION]
 > Keep vault_pass secret - this means your iso/install disk need to be managed appropriately!
+
+As a general precaution, the only secrets stored in the repo (with vault encryption) are relatively low risk. The user password is a hashed and salted value before encryption. The authorized keys file only contains public keys - the main reason to encrypt this file is to make it harder to inject a third party key into the file. Private keys *are not* stored here.
+
+
 
 To generate a linux password hash for use with ansible users module:
 ```

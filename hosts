@@ -1,3 +1,7 @@
 all:
    hosts:
       localhost
+
+graphical:
+   hosts:
+      mars

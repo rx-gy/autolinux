@@ -1,0 +1,3 @@
+- block:
+  # setup desktop
+  - import_tasks: software/suckless.yml

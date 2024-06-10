@@ -1,0 +1,41 @@
+- name: desktop | suckless - ensure dependencies
+  tags: desktop,suckless
+  apt:
+    pkg: dwm
+    state: build-dep
+
+- name: ensure git directory exists
+  file:
+    path: /home/j4ck/GIT/suckless
+    state: directory
+    owner: j4ck
+    group: j4ck
+    mode: 0700
+      
+- name: desktop | suckless - get source
+  tags: desktop,suckless,src
+  git:
+    repo: "https://git.suckless.org/{{ item }}"
+    dest: /home/j4ck/GIT/suckless/{{ item }}
+    force: yes
+  with_items:
+    - dwm
+    - slock
+    - dmenu
+    - st
+    - dwmstatus
+
+- name: desktop | suckless | dwm | slock | dmenu
+  tags: desktop,suckless,dwm,slock,dmenu
+  become: true
+  loop:
+    - dwm
+    - slock
+    - dmenu
+    - st
+    - dwmstatus
+  community.general.make:
+    target: install
+    chdir: "/home/j4ck/GIT/suckless/{{ item }}"
+    make: /usr/bin/make
+
