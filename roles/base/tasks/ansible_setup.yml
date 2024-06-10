@@ -9,7 +9,7 @@
   package:
     name:
       - dconf-cli
-      - python-psutil
+      - python3-psutil
 
 # Note: For Arch, the requirement is met by a dependency of systemd, only necessary on Debian-based
 - name: ansible setup | install acl package

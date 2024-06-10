@@ -1,6 +1,6 @@
 - name: system setup | utilities | install utility packages
   tags: packages,system,settings
-  apt:
+  package:
     state: latest
     name:
       - at
