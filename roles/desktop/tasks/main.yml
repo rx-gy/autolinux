@@ -1,3 +1,4 @@
 - block:
   # setup desktop
+  - import_tasks: software/x11.yml
   - import_tasks: software/suckless.yml
