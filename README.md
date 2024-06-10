@@ -91,14 +91,14 @@ On linux - one way to create your vault_pass is:
 tr -dc "[:graph:]" < /dev/random | head -c 1024 | xargs -0 > vault_pass
 ```
 
+
+> [!CAUTION]
+> Keep vault_pass secret - this means your iso/install disk need to be managed appropriately!
+
 To generate a linux password hash for use with ansible users module:
 ```
 openssl passwd -6
 ```
-
-
-> [!CAUTION]
-> Keep vault_pass secret - this means your iso/install disk need to be managed appropriately!
 
 
 Creating a secret to embed in playbook:
@@ -117,5 +117,5 @@ ansible-vault encrypt_string --vault-password-file=vault_pass 'test-value' --nam
 
 ### ansible
 * [Ansible-vault](https://docs.ansible.com/ansible/latest/vault_guide/vault_encrypting_content.html)
-* Important pre-reading - really helps make sense of the directory [layout](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#directory-layout)
+* [Important](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#directory-layout) pre-reading - really helps make sense of the directory layout.
 * The template for my approach - [LearnLinuxTV](https://github.com/LearnLinuxTV/personal_ansible_desktop_configs)
