@@ -14,6 +14,7 @@
 
 ## Ansible tasks
 - [ ] ssh config
+- [ ] sshd config
 - [ ] fonts
 - [ ] urxvt settings
 - [ ] oh-my-zsh and powerlevel10k
@@ -41,7 +42,13 @@ This git repo contains the intstructions everything for building and maintaining
 
 
 ## Specifics
-Develop a preseed file to describe the base configuration, then playbooks to build out the rest. Develop scripts to automate the updating and embedding of the preseed into an iso. Use [ventoy](https://ventoy.net/en/index.html) on a bootable USB to deploy base image.
+A preseed file is embedded in a debian sid netboot iso. This creates the base minimal deployment and sets up ansible-pull to run as a boot service through systemd.  
+
+Embedding of the preseed and supporting files in the iso is automated/documented through a bash script.
+
+Use [ventoy](https://ventoy.net/en/index.html) on a bootable USB to deploy the iso.
+
+Everything else is handled by ansible.
 
 
 # autolinux - mechanised
@@ -63,7 +70,7 @@ sudo apt install p7zip-full p7zip-rar genisoimage fakeroot xorriso isolinux binu
 ```
 
 > [!NOTE]
-> This is managed by update_preseed.sh
+> Pulling mini.iso is managed by update_preseed.sh; tools are assumed to be avaialable.
 
 
 ## Useful
