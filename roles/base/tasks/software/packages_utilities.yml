@@ -1,13 +1,13 @@
 - name: system setup | utilities | install utility packages
   tags: packages,system,settings
-  package:
+  apt:
     state: latest
     name:
       - at
       - colordiff
       - curl
       - dnsutils
-      - htop
+      - btop
       - iotop
       - lm-sensors
       - lsof
