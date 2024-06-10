@@ -1,0 +1,8 @@
+- name: graphical utilities
+  tags: x11,dwm,graphical,utilities
+  apt:
+    name:
+      - rxvt-unicode      # fallback terminal
+      - gparted           # disk management
+      - mesa-utils        # useful for glxgears
+    state: latest

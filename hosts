@@ -1,6 +1,8 @@
 all:
    hosts:
-      localhost
+      mars
+# uncomment localhost to capture new/nonspecific hosts
+#      localhost
 
 graphical:
    hosts:
