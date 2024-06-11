@@ -3,6 +3,7 @@
   when: inventory_hostname in groups['nvidia']
   apt:
     name: 
+      - "linux-headers-{{ ansible_kernel }}"
       - nvidia-driver
       - firmware-misc-nonfree
     state: latest
