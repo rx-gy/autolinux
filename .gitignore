@@ -7,3 +7,4 @@ debsid.iso
 MD5SUMS
 netboot/
 secrets/
+vault_pass
