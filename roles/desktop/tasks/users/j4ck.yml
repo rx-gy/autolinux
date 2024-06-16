@@ -21,3 +21,15 @@
   with_items:
     - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
+
+
+- name: desktop | users | j4ck | scripts
+  tags: desktop,users,j4ck,scripts
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: j4ck
+    group: j4ck
+    mode: 0755
+  with_items:
+    - { src: 'users/j4ck/scripts/', dst: '/home/j4ck/.local/bin/' }
