@@ -5,4 +5,6 @@
       - rxvt-unicode      # fallback terminal
       - gparted           # disk management
       - mesa-utils        # useful for glxgears
+      - xrdp
+      - wireshark
     state: latest

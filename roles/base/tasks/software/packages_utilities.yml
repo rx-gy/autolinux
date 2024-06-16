@@ -4,11 +4,10 @@
     state: latest
     name:
       - at
-      - tree
+      - btop
       - colordiff
       - curl
       - dnsutils
-      - btop
       - iotop
       - lm-sensors
       - lsof
@@ -24,8 +23,11 @@
       - rsync
       - screen
       - sshfs
+      - tcpdump
       - tmux
       - traceroute
+      - tree
+      - tshark
       - vim-nox
       - wget
       - whois
