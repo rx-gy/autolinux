@@ -1,9 +1,23 @@
 
-- name: users | j4ck | fonts
-  tags: users,j4ck,fonts
+- name: desktop | users | j4ck | fonts
+  tags: desktop,users,j4ck,fonts
   copy:
     src: users/j4ck/fonts/
     dest: /home/j4ck/.fonts/
     owner: j4ck
     group: j4ck
     mode: 0440
+
+
+
+- name: desktop | users | j4ck | dotfiles
+  tags: desktop,users,j4ck,dotfiles
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: j4ck
+    group: j4ck
+    mode: 0440
+  with_items:
+    - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
+    - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }

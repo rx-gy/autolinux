@@ -1,0 +1,13 @@
+URxvt*background: black
+URxvt*foreground: green
+URxvt*scrollBar: false
+URxvt.keysym.M-C-1: command:\033]710;suxuseuro\007\033]711;suxuseuro\007
+URxvt.keysym.M-C-2: command:\033]710;xft:Dwarf Fortress: curses 10x12:pixelsize=12\007\033]711;xft:Dwarf Fortress: curses 10x12:pixelsize=12\007
+URxvt.keysym.M-C-3: command:\033]710;xft:Dwarf Fortress: curses 10x12:pixelsize=18\007\033]711;xft:Dwarf Fortress: curses 10x12:pixelsize=18\007
+URxvt.keysym.M-C-4: command:\033]710;xft:Dwarf Fortress: curses 10x12:pixelsize=24\007\033]711;xft:Dwarf Fortress: curses 10x12:pixelsize=24\007
+URxvt.keysym.M-C-5: command:\033]710;xft:Square\007\033]711;xft:Square\007
+URxvt.keysym.M-C-6: command:\033]710;xft:Square:pixelsize=12\007\033]711;xft:Square:pixelsize=12\007
+URxvt.keysym.M-C-7: command:\033]710;xft:AG_Curses_16x16:pixelsize=12\007\033]711;xft:AG_Curses_16x16:pixelsize=12\007
+URxvt.keysym.M-C-8: command:\033]710;xft:Brutalist Mono:pixelsize=22\007\033]711;xft:Brutalist Mono:pixelsize=22\007
+URxvt.keysym.M-C-9: command:\033]710;xft:Brutalist Mono:pixelsize=16\007\033]711;xft:Brutalist Mono:pixelsize=16\007
+urxvt*color12: #7777FF
