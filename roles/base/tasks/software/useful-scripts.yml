@@ -1,0 +1,13 @@
+
+- name: useful-scripts | /usr/local/bin/
+  tags: sh,scripts
+  copy:
+    src: "scripts/{{ item.src }}"
+    dest: /usr/local/bin/
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - { src: 'ls-stat.sh' }
+    - { src: 'ipify' } 
+

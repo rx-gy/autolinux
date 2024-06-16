@@ -8,6 +8,16 @@
       - firmware-misc-nonfree
     state: latest
 
+- name: nvidia | run on discrete GPU
+  tags: desktop,nvidia,GPU,script
+  when: inventory_hostname in groups['nvidia']
+  copy:
+    src: scripts/nvidia-run.sh
+    dest: /usr/local/bin/nvidia-run.sh
+    owner: root
+    group: root
+    mode: 0755
+
 - name: desktop | x11 | xorg | x server
   tags: desktop,x11,xorg,xserver
   apt:

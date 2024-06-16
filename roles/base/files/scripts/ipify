@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -w"\n" https://api.ipify.org

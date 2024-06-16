@@ -4,6 +4,7 @@
     state: latest
     name:
       - at
+      - tree
       - colordiff
       - curl
       - dnsutils

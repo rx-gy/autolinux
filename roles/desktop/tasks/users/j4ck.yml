@@ -1,0 +1,9 @@
+
+- name: users | j4ck | fonts
+  tags: users,j4ck,fonts
+  copy:
+    src: users/j4ck/fonts/
+    dest: /home/j4ck/.fonts/
+    owner: j4ck
+    group: j4ck
+    mode: 0440
