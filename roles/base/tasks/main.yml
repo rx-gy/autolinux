@@ -11,6 +11,7 @@
 
   # Perform remaining tasks:
   - import_tasks: system_setup/clock.yml
+  - import_tasks: system_setup/locale.yml
 
   rescue:
     - set_fact: task_failed=true
