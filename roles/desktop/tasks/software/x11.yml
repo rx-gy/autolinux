@@ -24,6 +24,7 @@
     name: 
       - xserver-xorg-core
       - xserver-xorg-input-evdev
+      - xserver-xorg-input-synaptics
       - x11-xserver-utils
       - x11-xkb-utils
       - x11-utils
