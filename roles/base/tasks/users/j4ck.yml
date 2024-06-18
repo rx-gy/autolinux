@@ -41,6 +41,12 @@
     group: j4ck
     mode: 0440
 
+- name: users | debian | remove default account
+  tags: users,j4ck,users
+  user:
+    name: debian
+    remove: true
+    state: absent
 
 #- name: users | j4ck | add public key
 #  tags: dotfiles,j4ck,ssh,ssh-keys,users

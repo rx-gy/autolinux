@@ -19,7 +19,7 @@
 
 - name: system setup | locale | set en_AU as default locale
   tags: locale,system,setup
-  command: localectl set-locale LANG=en_AU.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=C.UTF-8
+  command: localectl set-locale LANG=en_AU.UTF-8 LANGUAGE=en_US.UTF-8 
   when: locale.changed
 
 - name: system setup | locale | remove en_GB

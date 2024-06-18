@@ -1,13 +1,13 @@
 all:
    hosts:
-      mars
+      mars:
 # uncomment localhost to capture new/nonspecific hosts
 #      localhost
 
 graphical:
    hosts:
-      mars
+      mars:
 
 nvidia:
    hosts:
-      mars
+      mars:
