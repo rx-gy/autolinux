@@ -1,0 +1,16 @@
+- name: desktop | browser | brave | keys
+  ansible.builtin.apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    state: present
+
+- name: desktop | browser | brave | repo
+  apt_repository:
+    repo: deb https://brave-browser-apt-release.s3.brave.com/ stable main
+    state: present
+    update_cache: yes
+
+- name: desktop | browser | brave 
+  apt:
+    name:
+      - brave
+    state: latest

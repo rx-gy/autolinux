@@ -9,9 +9,10 @@
   - import_tasks: software/packages_development.yml
   - import_tasks: software/packages_utilities.yml
 
-  # Perform remaining tasks:
+  # Perform system setup tasks:
   - import_tasks: system_setup/clock.yml
   - import_tasks: system_setup/locale.yml
+  - import_tasks: system_setup/firmware.yml
 
   rescue:
     - set_fact: task_failed=true

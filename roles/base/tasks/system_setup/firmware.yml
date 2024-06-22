@@ -1,0 +1,6 @@
+- name: system setup | firmware 
+  tags: system,firmware,non-free
+  apt:
+    name:
+      - firmware-linux-nonfree
+    state: latest
