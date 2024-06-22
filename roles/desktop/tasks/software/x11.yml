@@ -29,4 +29,5 @@
       - x11-xkb-utils
       - x11-utils
       - xinit
+      - lightdm
     state: latest
