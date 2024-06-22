@@ -13,6 +13,7 @@
     repo: "https://git.suckless.org/{{ item }}"
     dest: /home/j4ck/GIT/suckless/{{ item }}
     force: yes
+    register: gitclone
   with_items:
     - dwm
     - slock
@@ -33,4 +34,5 @@
     target: install
     chdir: "/home/j4ck/GIT/suckless/{{ item }}"
     make: /usr/bin/make
+    when: gitclone.changed
 
