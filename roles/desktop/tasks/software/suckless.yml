@@ -7,15 +7,6 @@
     state: build-dep
 
 
-- name: desktop | x11 | minimal xinitrc
-  tags: desktop,x11,xorg,xinitrc
-  copy:
-    src: users/j4ck/xinitrc
-    dest: /home/j4ck/.xinitrc
-    owner: j4ck
-    group: j4ck
-    mode: 0700
-      
 - name: desktop | suckless - get source
   tags: desktop,suckless,src
   git:

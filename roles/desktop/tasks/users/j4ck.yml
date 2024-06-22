@@ -9,7 +9,6 @@
     mode: 0440
 
 
-
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
   copy:
@@ -21,6 +20,8 @@
   with_items:
     - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
+    - { src: 'users/j4ck/xinitrc', dst: '/home/j4ck/.xinitrc' }
+    - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
 
 
 - name: desktop | users | j4ck | scripts
