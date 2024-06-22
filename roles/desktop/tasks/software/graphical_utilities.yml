@@ -7,4 +7,5 @@
       - mesa-utils        # useful for glxgears
       - xrdp
       - wireshark
+      - freecad           # mainline freecad - see freecad-source.yml for dev installation
     state: latest
