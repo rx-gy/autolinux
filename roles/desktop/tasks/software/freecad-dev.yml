@@ -1,0 +1,60 @@
+---
+- hosts: mars
+  become: yes
+  tasks:
+  - name: desktop | software | freecad-dev build-dependencies
+    apt:
+      name:
+        - freecad
+      state: build-dep
+  - name: desktop | software | freecad-dev required libs
+    apt:
+      name:
+        - libyaml-cpp-dev
+        - python3-pyside2.qtnetwork
+      state: present
+  
+  - name: desktop | software | freecad-dev git
+    git:
+      repo: "https://github.com/FreeCAD/FreeCAD"
+      dest: "/home/j4ck/GIT/freecad-source/"
+      force: yes
+  
+  - name: desktop | software | freecad-dev build-dir
+    file:
+      path: "/home/j4ck/GIT/freecad-source/build"
+      state: directory
+      owner: j4ck
+      group: j4ck
+      mode: 0700
+  
+  
+  - name: desktop | software | greecad-dev build step-1
+    command:
+      argv:
+        - "/usr/bin/cmake"
+        - "../"
+    args:
+      chdir: "/home/j4ck/GIT/freecad-source/build"
+  
+  - name: desktop | software | freecad-dev build step-2
+    command:
+      argv:
+        - "/usr/bin/make"
+        - "-j"
+        - "7"
+    args:
+      chdir: "/home/j4ck/GIT/freecad-source/build"
+  - name: desktop | software | freecad-dev create startscript
+    copy:
+      dest: "/usr/local/bin/FreeCAD"
+      content: |
+        #!/bin/sh
+        __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia /home/j4ck/GIT/freecad-source/build/bin/FreeCAD
+
+  - name: desktop | software | freecad-dev chmod startscript
+    command:
+      argv:
+        - "chmod"
+        - "+x"
+        - "/usr/local/bin/FreeCAD"
