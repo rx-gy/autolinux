@@ -29,7 +29,7 @@
       mode: 0700
   
   
-  - name: desktop | software | greecad-dev build step-1
+  - name: desktop | software | freecad-dev step-1 takes ~20 mins
     command:
       argv:
         - "/usr/bin/cmake"
@@ -37,7 +37,7 @@
     args:
       chdir: "/home/j4ck/GIT/freecad-source/build"
   
-  - name: desktop | software | freecad-dev build step-2 takes an hour
+  - name: desktop | software | freecad-dev step-2 takes ~40 mins
     args:
       chdir: "/home/j4ck/GIT/freecad-source/build"
     command:
@@ -45,7 +45,8 @@
         - "/usr/bin/make"
         - "-j"
         - "7"
-      ignore_errors: true
+    register: command_result
+    failed_when: command_result == 42     # trying to ignore results...
 
   - name: desktop | software | freecad-dev create startscript
     copy:
