@@ -37,14 +37,16 @@
     args:
       chdir: "/home/j4ck/GIT/freecad-source/build"
   
-  - name: desktop | software | freecad-dev build step-2
+  - name: desktop | software | freecad-dev build step-2 takes an hour
+    args:
+      chdir: "/home/j4ck/GIT/freecad-source/build"
     command:
       argv:
         - "/usr/bin/make"
         - "-j"
         - "7"
-    args:
-      chdir: "/home/j4ck/GIT/freecad-source/build"
+      ignore_errors: true
+
   - name: desktop | software | freecad-dev create startscript
     copy:
       dest: "/usr/local/bin/FreeCAD"
