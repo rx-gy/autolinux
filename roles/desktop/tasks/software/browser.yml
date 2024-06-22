@@ -12,5 +12,5 @@
 - name: desktop | browser | brave 
   apt:
     name:
-      - brave
+      - brave-browser
     state: latest
