@@ -1,5 +1,7 @@
 ---
-- hosts: mars
+- hosts: 
+   - mars
+   - mercury
   become: yes
   tasks:
   - name: desktop | software | freecad-dev build-dependencies
