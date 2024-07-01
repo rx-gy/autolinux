@@ -30,4 +30,8 @@
       - x11-utils
       - xinit
       - lightdm
+      - i3-wm
+      - i3
+      - suckless-tools
+
     state: latest
