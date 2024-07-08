@@ -17,5 +17,6 @@
 - name: gaphor
   ansible.builtin.pip:
     name: gaphor
+    break_system_packages: true
     umask: "0022"
   become: true
