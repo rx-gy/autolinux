@@ -3,6 +3,7 @@
   - import_tasks: software/x11.yml
   - import_tasks: software/graphical_utilities.yml
   - import_tasks: software/browser.yml
+  - import_tasks: software/gaphor.yml
 
   # setup user - only j4ck at present
   - import_tasks: users/j4ck.yml
