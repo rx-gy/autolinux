@@ -11,3 +11,8 @@ URxvt.keysym.M-C-7: command:\033]710;xft:AG_Curses_16x16:pixelsize=12\007\033]71
 URxvt.keysym.M-C-8: command:\033]710;xft:Brutalist Mono:pixelsize=22\007\033]711;xft:Brutalist Mono:pixelsize=22\007
 URxvt.keysym.M-C-9: command:\033]710;xft:Brutalist Mono:pixelsize=16\007\033]711;xft:Brutalist Mono:pixelsize=16\007
 urxvt*color12: #7777FF
+
+URxvt.transparent:     true
+URxvt.shading:         50
+URxvt.blurRadius:      0
+URxvt.background:      #d3d3d3
