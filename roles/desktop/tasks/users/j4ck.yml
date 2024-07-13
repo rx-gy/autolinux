@@ -24,7 +24,7 @@
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
 
 
-- name: desktop | users | j4ck | scripts
+- name: desktop | users | j4ck | resources
   tags: desktop,users,j4ck,scripts
   copy:
     src: "{{ item.src }}"
@@ -34,3 +34,14 @@
     mode: 0755
   with_items:
     - { src: 'users/j4ck/scripts/', dst: '/home/j4ck/.local/bin/' }
+    - { src: 'users/j4ck/backgrounds/{{ inventory_hostname }}.jpg', dst: '/home/j4ck/.local/bg.jpg' }
+
+- name: desktop | users | j4ck | i3-wm config
+  ansible.builtin.lineinfile:
+    path: /home/j4ck/.config/i3/config
+    regexp: '^exec --no-startup-id feh.*'
+    line: 'exec --no-startup-id feh --bg-center /home/j4ck/.local/bg.jpg'
+      #- name: desktop | users | j4ck | i3-wm config
+      #ansible.builtin.blockinfile:
+
+

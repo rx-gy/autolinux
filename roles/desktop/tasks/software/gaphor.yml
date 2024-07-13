@@ -1,4 +1,4 @@
-- name: gaphor-deps
+- name: desktop | architecture | gaphor-deps
   tags: desktop, modelling, architecture, gaphor
   apt:
     name:
@@ -14,7 +14,7 @@
       - python3-venv
     state: latest
 
-- name: gaphor
+- name: desktop | architecture | gaphor
   ansible.builtin.pip:
     name: gaphor
     break_system_packages: true
