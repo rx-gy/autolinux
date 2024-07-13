@@ -33,5 +33,7 @@
       - i3-wm
       - i3
       - suckless-tools
+      - xdotool
+      - feh
 
     state: latest
