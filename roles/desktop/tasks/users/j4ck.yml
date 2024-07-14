@@ -34,13 +34,13 @@
     mode: 0755
   with_items:
     - { src: 'users/j4ck/scripts/', dst: '/home/j4ck/.local/bin/' }
-    - { src: 'users/j4ck/backgrounds/{{ inventory_hostname }}.jpg', dst: '/home/j4ck/.local/bg.jpg' }
+    - { src: 'users/j4ck/backgrounds/{{ inventory_hostname }}.png', dst: '/home/j4ck/.local/bg.png' }
 
 - name: desktop | users | j4ck | i3-wm config
   ansible.builtin.lineinfile:
     path: /home/j4ck/.config/i3/config
     regexp: '^exec --no-startup-id feh.*'
-    line: 'exec --no-startup-id feh --bg-center /home/j4ck/.local/bg.jpg'
+    line: 'exec --no-startup-id feh --bg-center /home/j4ck/.local/bg.png'
 #- name: desktop | users | j4ck | i3-wm config
 #  ansible.builtin.blockinfile:
 #    path: /home/j4ck/.config/i3/config
