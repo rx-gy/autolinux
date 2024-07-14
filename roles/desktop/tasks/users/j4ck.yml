@@ -41,7 +41,9 @@
     path: /home/j4ck/.config/i3/config
     regexp: '^exec --no-startup-id feh.*'
     line: 'exec --no-startup-id feh --bg-center /home/j4ck/.local/bg.jpg'
-      #- name: desktop | users | j4ck | i3-wm config
-      #ansible.builtin.blockinfile:
+#- name: desktop | users | j4ck | i3-wm config
+#  ansible.builtin.blockinfile:
+#    path: /home/j4ck/.config/i3/config
+
 
 
