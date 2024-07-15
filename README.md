@@ -15,10 +15,10 @@
 ## Ansible tasks
 - [ ] ssh config
 - [ ] sshd config
-- [ ] fonts
-- [ ] urxvt settings
+- [x] fonts
+- [x] urxvt settings
 - [ ] oh-my-zsh and powerlevel10k
-- [ ] i3wm with basic customisation
+- [x] i3wm with basic customisation
 - [ ] possible switch to dwm...
 - [ ] syncthing
 - [ ] grub splash 
@@ -59,6 +59,7 @@ Reasonably terse and readable preseed. Very basic partitioning. Only user input 
 TODO: fix the grub text - currently barely readable on white image.
 > [!NOTE]
 > The installer only works while the kernel is relatively synchronised with the sid repos. This means you shouldn't assume an installer built now will work in a month.
+> Further, desynchronisation can occur during the period where the kernel modules in the repo don't match the current netboot kernel for a couple of hours until the daily netboot is updated.
 
 ## update_preseed.sh
 This script handles creation and updates of the customised debian sid iso. Pulls the most recent netboot iso.

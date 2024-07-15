@@ -9,6 +9,12 @@
     mode: 0440
 
 
+- name: desktop | users | j4ck | folders
+  file:
+    path: /home/j4ck/.config/i3
+    state: directory
+    mode: 0755
+
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
   copy:
@@ -22,6 +28,7 @@
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
     - { src: 'users/j4ck/xinitrc', dst: '/home/j4ck/.xinitrc' }
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
+    - { src: 'users/j4ck/i3config', dst: '/home/j4ck/.config/i3/config' }
 
 
 - name: desktop | users | j4ck | resources
