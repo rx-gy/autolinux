@@ -8,3 +8,4 @@ MD5SUMS
 netboot/
 secrets/
 vault_pass
+wireless.cfg
