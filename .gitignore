@@ -9,3 +9,5 @@ netboot/
 secrets/
 vault_pass
 wireless.cfg
+dell_preseed.patch
+firmware.cpio.gz

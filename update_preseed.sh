@@ -16,7 +16,6 @@ initrd=${new_files}/initrd
 
 
 rm  $mbr_template
-rm -r $new_files
 rm  $new_iso
 
 
@@ -48,7 +47,11 @@ echo preseed.cfg | cpio -H newc -o -A -F $initrd
 echo ansible.service | cpio -H newc -o -A -F $initrd
 echo vault_pass | cpio -H newc -o -A -F $initrd
 
+[ -f firmware.cpio.gz ] || wget https://cdimage.debian.org/cdimage/firmware/sid/current/firmware.cpio.gz
 gzip ${initrd}
+cp -p ${initrd}.gz ${initrd}.gz.orig
+rm ${initrd}.gz
+cat ${initrd}.gz.orig firmware.cpio.gz > ${initrd}.gz
 
 cp splash.png ${new_files}/splash.png
 
