@@ -3,6 +3,7 @@ all:
       mars:
       mercury:
       hyperion:
+      saturn:
 # uncomment localhost to capture new/nonspecific hosts
 #      localhost
 
@@ -11,6 +12,7 @@ graphical:
       mars:
       mercury:
       hyperion:
+      saturn:
 
 nvidia:
    hosts:
