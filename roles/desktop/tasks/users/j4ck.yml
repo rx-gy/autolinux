@@ -23,6 +23,7 @@
     owner: j4ck
     group: j4ck
     mode: 0440
+    force: no
   with_items:
     - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
@@ -39,6 +40,7 @@
     owner: j4ck
     group: j4ck
     mode: 0755
+    force: no
   with_items:
     - { src: 'users/j4ck/scripts/', dst: '/home/j4ck/.local/bin/' }
     - { src: 'users/j4ck/backgrounds/{{ inventory_hostname }}.png', dst: '/home/j4ck/.local/bg.png' }
