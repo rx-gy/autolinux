@@ -30,6 +30,8 @@
     - { src: 'users/j4ck/xinitrc', dst: '/home/j4ck/.xinitrc' }
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
     - { src: 'users/j4ck/i3config', dst: '/home/j4ck/.config/i3/config' }
+    - { src: 'users/j4ck/jgmenu/jgmenurc', dst: '/home/j4ck/.config/jgmenu/jgmenurc' }
+    - { src: 'users/j4ck/jgmenu/append.csv', dst: '/home/j4ck/.config/jgmenu/append.csv' }
 
 
 - name: desktop | users | j4ck | resources
