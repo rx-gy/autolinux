@@ -11,3 +11,5 @@ vault_pass
 wireless.cfg
 dell_preseed.patch
 firmware.cpio.gz
+local_settings_preseed.patch
+netbook_preseed.patch
