@@ -1,13 +1,14 @@
 - block:
-  # Make sure users exist on the system
-  - import_tasks: users/j4ck.yml
-
   # Set up the ansible environment
   - import_tasks: ansible_setup.yml
 
   # install software
   - import_tasks: software/packages_development.yml
   - import_tasks: software/packages_utilities.yml
+
+  # Make sure users exist on the system
+  - import_tasks: users/j4ck.yml
+
 
   # Perform system setup tasks:
   - import_tasks: system_setup/clock.yml
