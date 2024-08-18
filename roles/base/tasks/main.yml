@@ -15,5 +15,5 @@
   - import_tasks: system_setup/locale.yml
   - import_tasks: system_setup/firmware.yml
 
-  #  rescue:
-  #  - set_fact: task_failed=true
+  rescue:
+    - set_fact: task_failed=true
