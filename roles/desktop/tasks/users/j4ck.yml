@@ -14,12 +14,11 @@
     path: "{{ item.dir }}"
     state: directory
     mode: 0755
+    owner: j4ck
+    group: j4ck
   with_items:
     - { dir: '/home/j4ck/.config/i3' }
     - { dir: '/home/j4ck/.config/jgmenu/' }
-
-  become: yes
-  become_user: j4ck
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
