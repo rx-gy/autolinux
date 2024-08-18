@@ -62,7 +62,13 @@
     dest: '/home/j4ck/.oh-my-zsh/themes/powerlevel10k'
     depth: 1
 
-- name: users | shell | oh-my-zsh config
+- name: users | shell | oh-my-tmux
+  tags: user,j4ck,tmux
+  git:
+    repo: 'https://github.com/gpakosz/.tmux.git'
+    dest: '/home/j4ck/GIT/oh-my-tmux'
+
+- name: users | shell | oh-my-zsh/tmux config
   tags: user,j4ck,zsh
   copy:
     src: '{{ item.src }}'
@@ -71,6 +77,7 @@
     items:
       - {src: '/home/j4ck/.oh-my-zsh/templates/zshrc.zsh-template', dest: '/home/j4ck/.zshrc'}
       - {src: 'users/j4ck/p10k.zsh', dest: '/home/j4ck/.p10k.zsh'}
+      - {src: 'users/j4ck/tmux.conf.local', dest: '/home/j4ck/.tmux.conf.local'}
 
 - name: users | shell | powerlevel10k config
   tags: user,j4ck,zsh
