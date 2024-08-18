@@ -68,7 +68,7 @@
     repo: 'https://github.com/gpakosz/.tmux.git'
     dest: '/home/j4ck/GIT/oh-my-tmux'
 
-- name: users | shell | oh-my-zsh/tmux config
+- name: users | shell | oh-my-zsh tmux config
   tags: user,j4ck,zsh
   copy:
     src: '{{ item.src }}'
