@@ -19,3 +19,7 @@ graphical:
 nvidia:
    hosts:
       mars:
+
+b43:
+   hoost:
+      nebula:

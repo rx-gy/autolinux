@@ -4,3 +4,9 @@
     name:
       - firmware-linux-nonfree
     state: latest
+- name: system setup | wireless
+  tags: system,firmware,wireless
+  apt:
+    name:
+      - firmware-b43-installer
+  when: inventory_hostname in groups['b43']
