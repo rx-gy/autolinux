@@ -11,9 +11,15 @@
 
 - name: desktop | users | j4ck | folders
   file:
-    path: /home/j4ck/.config/i3
+    path: "{{ item.dir }}"
     state: directory
     mode: 0755
+  with_items:
+    - { dir: '/home/j4ck/.config/i3' }
+    - { dir: '/home/j4ck/.config/jgmenu/' }
+
+  become: yes
+  become_user: j4ck
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
