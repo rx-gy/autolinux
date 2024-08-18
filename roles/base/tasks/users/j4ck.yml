@@ -103,7 +103,7 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     force: true
-    with_items:
+  with_items:
       - { src: '/home/j4ck/.oh-my-zsh/templates/zshrc.zsh-template', dest: '/home/j4ck/.zshrc' }
       - { src: 'users/j4ck/p10k.zsh', dest: '/home/j4ck/.p10k.zsh' }
       - { src: 'users/j4ck/tmux.conf.local', dest: '/home/j4ck/.tmux.conf.local' }
