@@ -68,32 +68,6 @@
     repo: 'https://github.com/gpakosz/.tmux.git'
     dest: '/home/j4ck/GIT/oh-my-tmux'
 
-- name: users | shell | oh-my-config
-  tags: user,j4ck,zsh
-  copy:
-    src: '{{ item.src }}'
-    dest: '{{ item.dest }}'
-    force: true
-    with_items:
-      - {src: '/home/j4ck/.oh-my-zsh/templates/zshrc.zsh-template', dest: '/home/j4ck/.zshrc'}
-      - {src: 'users/j4ck/p10k.zsh', dest: '/home/j4ck/.p10k.zsh'}
-      - {src: 'users/j4ck/tmux.conf.local', dest: '/home/j4ck/.tmux.conf.local'}
-
-- name: users | shell | powerlevel10k config
-  tags: user,j4ck,zsh
-  lineinfile:
-    path: '/home/j4ck/.zshrc'
-    regexp: '^ZSH_THEME='
-    line: 'ZSH_THEME=powerlevel10k/powerlevel10k'
-
-#- name: users | j4ck | add public key
-#  tags: dotfiles,j4ck,ssh,ssh-keys,users
-#  authorized_key:
-#    user: j4ck
-#    key: "{{ item }}"
-#  with_file:
-#    - users/j4ck/ssh/j4ck_id_ed25519.pub
-#
 #- name: users | j4ck | create config directories
 #  tags: dotfiles,j4ck,tmux,users,vim,zsh
 #  file:
@@ -116,6 +90,32 @@
 #    - { dir: '.vim/colors' }
 #    - { dir: '.vim/ftplugin' }
 #    - { dir: '.zsh' }
+
+- name: users | shell | oh-my-config
+  tags: user,j4ck,zsh
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    force: true
+    with_items:
+      - {src: '/home/j4ck/.oh-my-zsh/templates/zshrc.zsh-template', dest: '/home/j4ck/.zshrc'}
+      - {src: 'users/j4ck/p10k.zsh', dest: '/home/j4ck/.p10k.zsh'}
+      - {src: 'users/j4ck/tmux.conf.local', dest: '/home/j4ck/.tmux.conf.local'}
+
+- name: users | shell | powerlevel10k config
+  tags: user,j4ck,zsh
+  lineinfile:
+    path: '/home/j4ck/.zshrc'
+    regexp: '^ZSH_THEME='
+    line: 'ZSH_THEME=powerlevel10k/powerlevel10k'
+
+#- name: users | j4ck | add public key
+#  tags: dotfiles,j4ck,ssh,ssh-keys,users
+#  authorized_key:
+#    user: j4ck
+#    key: "{{ item }}"
+#  with_file:
+#    - users/j4ck/ssh/j4ck_id_ed25519.pub
 #
 #- name: users | j4ck | copy tmux config (server version)
 #  tags: dotfiles,users,j4ck,tmux,users,vim,zsh
