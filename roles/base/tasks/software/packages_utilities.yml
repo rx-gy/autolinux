@@ -17,6 +17,7 @@
       - ncdu
       - neofetch
       - net-tools
+      - network-manager
       - nfs-common
       - nmap
       - ranger
