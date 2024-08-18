@@ -3,6 +3,7 @@
   apt:
     state: latest
     name:
+      - 7zip
       - at
       - btop
       - colordiff
@@ -31,4 +32,5 @@
       - vim-nox
       - wget
       - whois
+      - xorriso
       - zsh
