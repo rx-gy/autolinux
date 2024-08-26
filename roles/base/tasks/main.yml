@@ -5,6 +5,7 @@
   # install software
   - import_tasks: software/packages_development.yml
   - import_tasks: software/packages_utilities.yml
+  - import_tasks: software/useful_scripts.yml
 
   # Make sure users exist on the system
   - import_tasks: users/j4ck.yml

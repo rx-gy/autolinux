@@ -10,4 +10,5 @@
   with_items:
     - { src: 'ls-stat.sh' }
     - { src: 'ipify' } 
+    - { src: 'backlight' } 
 

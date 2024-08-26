@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# max brightness 4438
+
+value=$(( 4438 * $1 / 100 ))
+
+
+echo $value > /sys/class/backlight/intel_backlight/brightness
