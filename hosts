@@ -6,7 +6,7 @@ all:
       saturn:
       nebula:
 # uncomment localhost to capture new/nonspecific hosts
-#      localhost
+      localhost:
 
 graphical:
    hosts:
