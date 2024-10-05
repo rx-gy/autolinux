@@ -8,7 +8,7 @@
   tags: system,firmware,wireless
   apt:
     name:
-      - linux-headers-{{ ansible-kernel }}
+      - linux-headers-amd64
       - firmware-b43-installer
       - broadcom-sta-dkms
   when: inventory_hostname in groups['b43']
