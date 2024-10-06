@@ -49,7 +49,7 @@
     mode: 0755
     force: no
   with_items:
-    - { src: 'users/j4ck/scripts/', dst: '/home/j4ck/.local/bin/' }
+    - { src: 'users/j4ck/scripts/', dst: '/usr/local/bin/' }
     - { src: 'users/j4ck/backgrounds/{{ inventory_hostname }}.png', dst: '/home/j4ck/.local/bg.png' }
 
 - name: desktop | users | j4ck | i3-wm config
