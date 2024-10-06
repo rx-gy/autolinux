@@ -1,4 +1,4 @@
-- name: graphical utilities
+- name: desktop | graphical utilities
   tags: x11,dwm,graphical,utilities
   apt:
     name:
@@ -10,3 +10,22 @@
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - jgmenu
     state: latest
+
+
+- name: desktop | graphical utilities | xclickroot
+  tags: desktop,xclickroot,git
+  git:
+    repo: "https://github.com/phillbush/xclickroot"
+    dest: /home/j4ck/GIT/xclickroot
+    force: yes
+  register: gitclone
+
+- name: desktop | graphical utilities | xclickroot
+  tags: desktop,xclickroot,make
+  become: true
+  community.general.make:
+    target: install
+    chdir: "/home/j4ck/GIT/xclickroot"
+    make: /usr/bin/make
+  when: gitclone.changed
+
