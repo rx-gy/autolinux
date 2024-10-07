@@ -12,7 +12,7 @@
     state: latest
 
 
-- name: desktop | graphical utilities | xclickroot
+- name: desktop | graphical utilities | xclickroot-git
   tags: desktop,xclickroot,git
   git:
     repo: "https://github.com/phillbush/xclickroot"
@@ -20,7 +20,7 @@
     force: yes
   register: gitclone
 
-- name: desktop | graphical utilities | xclickroot
+- name: desktop | graphical utilities | xclickroot-make
   tags: desktop,xclickroot,make
   become: true
   community.general.make:
