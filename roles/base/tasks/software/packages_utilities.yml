@@ -33,5 +33,6 @@
       - vim-nox
       - wget
       - whois
+      - wireguard
       - xorriso
       - zsh

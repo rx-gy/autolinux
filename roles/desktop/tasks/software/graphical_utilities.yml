@@ -6,6 +6,8 @@
       - gparted           # disk management
       - mesa-utils        # useful for glxgears
       - xrdp
+      - remmina
+      - pulseaudio
       - wireshark
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - jgmenu
