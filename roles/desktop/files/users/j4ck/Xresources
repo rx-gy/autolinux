@@ -9,8 +9,8 @@ URxvt.keysym.M-C-4: command:\033]710;xft:Dwarf Fortress: curses 10x12:pixelsize=
 URxvt.keysym.M-C-5: command:\033]710;xft:Square\007\033]711;xft:Square\007
 URxvt.keysym.M-C-6: command:\033]710;xft:Square:pixelsize=12\007\033]711;xft:Square:pixelsize=12\007
 URxvt.keysym.M-C-7: command:\033]710;xft:MesloLGS NF:pixelsize=11\007\033]711;xft:MesloLGS NF:pixelsize=11\007
-URxvt.keysym.M-C-8: command:\033]710;xft:Brutalist Mono:pixelsize=22\007\033]711;xft:Brutalist Mono:pixelsize=22\007
-URxvt.keysym.M-C-9: command:\033]710;xft:Brutalist Mono:pixelsize=16\007\033]711;xft:Brutalist Mono:pixelsize=16\007
+URxvt.keysym.M-C-8: command:\033]710;xft:MesloLGS NF:pixelsize=28\007\033]711;xft:MesloLGS NF:pixelsize=28\007
+URxvt.keysym.M-C-9: command:\033]710;xft:MesloLGS NF:pixelsize=36\007\033]711;xft:MesloLGS NF:pixelsize=36\007
 urxvt*color12: #7777FF
 
 URxvt.transparent:     true
