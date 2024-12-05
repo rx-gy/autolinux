@@ -37,7 +37,6 @@
       
 - name: desktop | lightdm,i3
   tags: desktop,i3
-  when: inventory_hostname != "kitsune"
   apt:
     name: 
       - lightdm
@@ -45,13 +44,14 @@
       - i3
 
     state: latest
+  when: inventory_hostname != "kitsune"
 
 - name: desktop | gnome
   tags: desktop,gnome
-  when: inventory_hostname == "kitsune"
   apt:
     name: 
       - gdm3
       - gnome
+  when: inventory_hostname == "kitsune"
 
     state: latest
