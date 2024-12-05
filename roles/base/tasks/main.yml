@@ -1,23 +1,29 @@
 #- block:
   # Set up the ansible environment
-  - import_tasks: ansible_setup.yml
+- name: ansible
+  import_tasks: ansible_setup.yml
 
   # install software
+- name: software
+  block:
   - import_tasks: software/packages_development.yml
   - import_tasks: software/packages_utilities.yml
   - import_tasks: software/useful_scripts.yml
 
   # Make sure users exist on the system
-  - import_tasks: users/j4ck.yml
-  - name: kitsune_base
-      import_tasks: users/vixen.yml
-      when: inventory_hostname == "kitsune"
+- name: j4ck
+    import_tasks: users/j4ck.yml
+
+- name: kitsune
+    import_tasks: users/vixen.yml
+    when: inventory_hostname == "kitsune"
 
 
   # Perform system setup tasks:
+- name: system
   - import_tasks: system_setup/clock.yml
   - import_tasks: system_setup/locale.yml
   - import_tasks: system_setup/firmware.yml
 
-  rescue:
-    - set_fact: task_failed=true
+    #  rescue:
+    #- set_fact: task_failed=true
