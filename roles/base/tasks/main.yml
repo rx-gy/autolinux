@@ -1,4 +1,4 @@
-- block:
+#- block:
   # Set up the ansible environment
   - import_tasks: ansible_setup.yml
 
