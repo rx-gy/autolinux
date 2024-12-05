@@ -1,7 +1,8 @@
 #- block:
   # Set up the ansible environment
 - name: ansible
-  import_tasks: ansible_setup.yml
+  block:
+    import_tasks: ansible_setup.yml
 
   # install software
 - name: software
@@ -12,15 +13,18 @@
 
   # Make sure users exist on the system
 - name: j4ck
+  block:
     import_tasks: users/j4ck.yml
 
 - name: kitsune
+  block:
     import_tasks: users/vixen.yml
     when: inventory_hostname == "kitsune"
 
 
   # Perform system setup tasks:
 - name: system
+  block:
   - import_tasks: system_setup/clock.yml
   - import_tasks: system_setup/locale.yml
   - import_tasks: system_setup/firmware.yml
