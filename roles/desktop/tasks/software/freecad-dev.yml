@@ -2,6 +2,7 @@
 - hosts: 
    - mars
    - mercury
+   - nebula
   become: yes
   tasks:
   - name: desktop | software | freecad-dev build-dependencies
@@ -9,6 +10,7 @@
       name:
         - freecad
       state: build-dep
+
   - name: desktop | software | freecad-dev required libs
     apt:
       name:

@@ -29,11 +29,29 @@
       - x11-xkb-utils
       - x11-utils
       - xinit
-      - lightdm
-      - i3-wm
-      - i3
       - suckless-tools
       - xdotool
       - feh
+
+    state: latest
+      
+- name: desktop | lightdm,i3
+  tags: desktop,i3
+  when: inventory_hostname != "kitsune"
+  apt:
+    name: 
+      - lightdm
+      - i3-wm
+      - i3
+
+    state: latest
+
+- name: desktop | gnome
+  tags: desktop,gnome
+  when: inventory_hostname == "kitsune"
+  apt:
+    name: 
+      - gdm3
+      - gnome
 
     state: latest

@@ -1,9 +1,3 @@
-#- name: users | remove defaults
-#  tags: users,remove
-#  user:
-#    name: debian
-#    state: absent
-
 - name: users | j4ck | create group
   tags: groups,j4ck,users
   group:

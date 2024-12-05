@@ -9,6 +9,9 @@
 
   # Make sure users exist on the system
   - import_tasks: users/j4ck.yml
+  - name: kitsune_base
+      when: inventory_hostname == "kitsune"
+      import_tasks: users/vixen.yml
 
 
   # Perform system setup tasks:
