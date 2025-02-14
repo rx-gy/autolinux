@@ -52,6 +52,6 @@
     name: 
       - gdm3
       - gnome
+    state: latest
   when: inventory_hostname == "kitsune"
 
-    state: latest
