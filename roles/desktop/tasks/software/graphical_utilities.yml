@@ -11,7 +11,7 @@
       - wireshark
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - jgmenu
-      - libx11-dev
+      - libx11-dev        # xclickroot dependency
     state: latest
 
 
