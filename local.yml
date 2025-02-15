@@ -5,7 +5,7 @@
     - name: pre-run | update package cache
       tags: always
       apt: update_cache=yes
-      changed_when: False
+#      changed_when: False
 # run roles
 
 - hosts: all
