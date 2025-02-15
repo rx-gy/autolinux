@@ -15,7 +15,7 @@
     password: "{{ j4ck_passwd }}"
     shell: /usr/bin/zsh
 
-- name: users | j4ck | create .ssh directory
+- name: users | j4ck | create user directories
   tags: dotfiles,j4ck,ssh,users
   file:
     path: "{{ item.dir }}"
@@ -25,6 +25,7 @@
     mode: 0700
   with_items:
     - { dir: '/home/j4ck/.ssh' }
+    - { dir: '/home/j4ck/.local' }
 
 - name: users | j4ck | copy authorized_keys
   tags: users,j4ck,ssh
