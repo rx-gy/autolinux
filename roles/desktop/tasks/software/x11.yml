@@ -8,6 +8,16 @@
       - firmware-misc-nonfree
     state: latest
 
+- name: nvidia | xorg settings
+  tags: desktop,nvidia,GPU,xorg
+  when: inventory_hostname in groups['nvidia']
+  copy:
+    src: scripts/xorg.conf
+    dest: /etc/X11/xorg.conf
+    owner: root
+    group: root
+    mode: 0755
+
 - name: nvidia | run on discrete GPU
   tags: desktop,nvidia,GPU,script
   when: inventory_hostname in groups['nvidia']
