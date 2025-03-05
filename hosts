@@ -5,6 +5,7 @@ all:
       hyperion:
       saturn:
       nebula:
+      gloaming:
       kitsune:
 # uncomment localhost to capture new/nonspecific hosts
 #      localhost:
@@ -17,6 +18,10 @@ graphical:
       saturn:
       nebula:
       kitsune:
+
+server:
+   hosts:
+      gloaming:
 
 nvidia:
    hosts:
