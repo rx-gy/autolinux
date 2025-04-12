@@ -5,6 +5,7 @@
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - gparted           # disk management
       - jgmenu
+      - keepassxc-full
       - libx11-dev        # xclickroot dependency
       - mesa-utils        # useful for glxgears
       - pulseaudio
