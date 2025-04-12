@@ -2,16 +2,19 @@
   tags: x11,dwm,graphical,utilities
   apt:
     name:
-      - rxvt-unicode      # fallback terminal
-      - gparted           # disk management
-      - mesa-utils        # useful for glxgears
-      - xrdp
-      - remmina
-      - pulseaudio
-      - wireshark
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
+      - gparted           # disk management
       - jgmenu
       - libx11-dev        # xclickroot dependency
+      - mesa-utils        # useful for glxgears
+      - pulseaudio
+      - remmina
+      - rxvt-unicode      # fallback terminal
+      - syncthing
+      - syncthingtray
+      - wireshark
+      - xclip
+      - xrdp
     state: latest
 
 

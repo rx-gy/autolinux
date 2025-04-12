@@ -34,7 +34,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 
-#exec --no-startup-id syncthingtray
+exec --no-startup-id syncthingtray
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 
