@@ -12,3 +12,20 @@
     - { src: 'ipify' } 
     - { src: 'backlight' } 
 
+- name: startup services
+  tags: services
+  copy:
+    src: "scripts/{{ item.src }}"
+    dest: /etc/systemd/system/
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - { src: 'syncthing.service' }
+
+
+- name: Enable syncthing
+  ansible.builtin.systemd:
+    name: syncthing
+    enabled: yes
+    masked: no
