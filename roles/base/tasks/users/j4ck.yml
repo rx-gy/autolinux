@@ -26,6 +26,7 @@
   with_items:
     - { dir: '/home/j4ck/.ssh' }
     - { dir: '/home/j4ck/.local' }
+    - { dir: '/home/j4ck/.config/systemd/user/' }
 
 - name: users | j4ck | copy authorized_keys
   tags: users,j4ck,ssh
@@ -68,6 +69,25 @@
     dest: '/home/j4ck/GIT/oh-my-tmux'
   become: yes
   become_user: j4ck
+
+- name: startup services
+  tags: services
+  copy:
+    src: "users/j4ck/{{ item.src }}"
+    dest: /home/j4ck/.config/systemd/user/
+    owner: j4ck
+    group: j4ck
+    mode: 0755
+  with_items:
+    - { src: 'syncthing.service' }
+
+
+- name: Enable syncthing
+  ansible.builtin.systemd:
+    name: syncthing
+    enabled: yes
+    masked: no
+    scope: user
 
 #- name: users | j4ck | create config directories
 #  tags: dotfiles,j4ck,tmux,users,vim,zsh

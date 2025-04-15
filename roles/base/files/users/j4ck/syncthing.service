@@ -1,0 +1,14 @@
+[Unit]
+Description=Syncthing
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/syncthing --no-browser
+ExecStop=/usr/bin/syncthing --no-browser
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target
+
+
