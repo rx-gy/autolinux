@@ -30,7 +30,6 @@
     mode: 0440
     force: no
   with_items:
-    - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
     - { src: 'users/j4ck/xinitrc', dst: '/home/j4ck/.xinitrc' }
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
@@ -38,6 +37,31 @@
     - { src: 'users/j4ck/jgmenu/jgmenurc', dst: '/home/j4ck/.config/jgmenu/jgmenurc' }
     - { src: 'users/j4ck/jgmenu/append.csv', dst: '/home/j4ck/.config/jgmenu/append.csv' }
 
+- name: desktop | users | j4ck | dotfiles
+  tags: desktop,users,j4ck,dotfiles
+  when: inventory_hostname not in groups['nvidia']
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: j4ck
+    group: j4ck
+    mode: 0440
+    force: no
+  with_items:
+    - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
+
+- name: desktop | users | j4ck | dotfiles
+  tags: desktop,users,j4ck,dotfiles
+  when: inventory_hostname in groups['nvidia']
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: j4ck
+    group: j4ck
+    mode: 0440
+    force: no
+  with_items:
+    - { src: 'users/j4ck/Xresources-mars', dst: '/home/j4ck/.Xresources' }
 
 - name: desktop | users | j4ck | resources
   tags: desktop,users,j4ck,scripts
