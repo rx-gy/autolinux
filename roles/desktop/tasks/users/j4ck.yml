@@ -33,7 +33,6 @@
     - { src: 'users/j4ck/Xdefaults', dst: '/home/j4ck/.Xdefaults' }
     - { src: 'users/j4ck/xinitrc', dst: '/home/j4ck/.xinitrc' }
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
-    - { src: 'users/j4ck/i3config', dst: '/home/j4ck/.config/i3/config' }
     - { src: 'users/j4ck/jgmenu/jgmenurc', dst: '/home/j4ck/.config/jgmenu/jgmenurc' }
     - { src: 'users/j4ck/jgmenu/append.csv', dst: '/home/j4ck/.config/jgmenu/append.csv' }
 
@@ -49,6 +48,7 @@
     force: no
   with_items:
     - { src: 'users/j4ck/Xresources', dst: '/home/j4ck/.Xresources' }
+    - { src: 'users/j4ck/i3config', dst: '/home/j4ck/.config/i3/config' }
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
@@ -62,6 +62,7 @@
     force: no
   with_items:
     - { src: 'users/j4ck/Xresources-mars', dst: '/home/j4ck/.Xresources' }
+    - { src: 'users/j4ck/i3config-mars', dst: '/home/j4ck/.config/i3/config' }
 
 - name: desktop | users | j4ck | resources
   tags: desktop,users,j4ck,scripts
