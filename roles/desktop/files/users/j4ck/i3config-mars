@@ -8,8 +8,8 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
-set $mod Control
+exec --no-startup-id xmodmap -e 'remove mod1 = Alt_R'
+set $mod mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -217,3 +217,4 @@ bar {
         status_command i3status
 }
 
+exec --no-startup-id xmodmap -e 'keycode 108 = Super_R'

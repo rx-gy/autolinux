@@ -1,0 +1,12 @@
+
+- name: base | audiobookshelf | repo
+  apt_repository:
+    repo: deb https://advplyr.github.io/audiobookshelf-ppa ./
+    state: present
+    update_cache: yes
+
+- name: base | audibookshelf 
+  apt:
+    name:
+      - audiobookshelf
+    state: latest
