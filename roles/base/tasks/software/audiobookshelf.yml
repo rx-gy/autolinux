@@ -1,16 +1,16 @@
 
-- name: base | audiobookshelf | repo
-  apt_repository:
-    repo: deb https://advplyr.github.io/audiobookshelf-ppa ./
-    state: present
-    update_cache: yes
-
-- name: desktop | browser | brave-keys.   
+- name: base | audiobookshelf | keys   
   ansible.builtin.get_url:     
     url: https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg
     dest: /etc/apt/trusted.gpg.d/adb-archive-keyring.gpg
     mode: '0644'     
     force: true
+
+- name: base | audiobookshelf | repo
+  apt_repository:
+    repo: deb https://advplyr.github.io/audiobookshelf-ppa ./
+    state: present
+    update_cache: yes
 
 - name: base | audibookshelf 
   apt:
