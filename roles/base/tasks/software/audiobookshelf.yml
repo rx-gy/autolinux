@@ -5,6 +5,13 @@
     state: present
     update_cache: yes
 
+- name: desktop | browser | brave-keys.   
+  ansible.builtin.get_url:     
+    url: https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg
+    dest: /etc/apt/trusted.gpg.d/adb-archive-keyring.gpg
+    mode: '0644'     
+    force: true
+
 - name: base | audibookshelf 
   apt:
     name:
