@@ -2,7 +2,7 @@
 - name: base | audiobookshelf | keys   
   ansible.builtin.get_url:     
     url: https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg
-    dest: /etc/apt/trusted.gpg.d/adb-archive-keyring.gpg
+    dest: /etc/apt/trusted.gpg.d/adb-archive-keyring.asc
     mode: '0644'     
     force: true
 
