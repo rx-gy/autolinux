@@ -24,6 +24,7 @@
       - rsync
       - screen
       - sshfs
+      - syncthing
       - tcpdump
       - tmux
       - traceroute
