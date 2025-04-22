@@ -2,6 +2,7 @@
   tags: x11,dwm,graphical,utilities
   apt:
     name:
+      - evince
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - gparted           # disk management
       - jgmenu
