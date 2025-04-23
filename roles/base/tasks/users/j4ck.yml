@@ -1,14 +1,15 @@
-- name: users | j4ck | create group
-  tags: groups,j4ck,users
-  group:
-    name: j4ck
-    state: present
+#- name: users | j4ck | create group
+#  tags: groups,j4ck,users
+#  group:
+#    name: j4ck
+#    state: present
 
 - name: users | j4ck | create user
   tags: j4ck,sudo,users
-  user:
+  ansible.builtin.user:
     name: j4ck
     group: j4ck
+    create_home: yes
     groups: adm,audio,sudo
     state: present
     comment: "Jack"
@@ -24,6 +25,7 @@
     group: j4ck
     mode: 0700
   with_items:
+    - { dir: '/home/j4ck/GIT' }
     - { dir: '/home/j4ck/.ssh' }
     - { dir: '/home/j4ck/.local' }
     - { dir: '/home/j4ck/.config/systemd/user/' }
