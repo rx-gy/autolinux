@@ -1,8 +1,8 @@
-#- name: users | j4ck | create group
-#  tags: groups,j4ck,users
-#  group:
-#    name: j4ck
-#    state: present
+- name: users | j4ck | create group
+  tags: groups,j4ck,users
+  group:
+    name: j4ck
+    state: present
 
 - name: users | j4ck | create user
   tags: j4ck,sudo,users
