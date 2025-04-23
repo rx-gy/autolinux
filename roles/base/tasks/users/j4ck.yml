@@ -1,3 +1,10 @@
+- name: users | install shell
+  tags: packages,system,settings
+  apt:
+    state: latest
+    name:
+      - zsh
+
 - name: users | j4ck | create group
   tags: groups,j4ck,users
   group:
