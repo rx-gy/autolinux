@@ -8,10 +8,10 @@
   tags: j4ck,sudo,users
   ansible.builtin.user:
     name: j4ck
-    group: j4ck
+#    group: j4ck
     create_home: yes
-    groups: adm,audio,sudo
-    state: present
+    groups: j4ck,adm,audio,sudo
+    append: yes
     comment: "Jack"
     password: "{{ j4ck_passwd }}"
     shell: /usr/bin/zsh
