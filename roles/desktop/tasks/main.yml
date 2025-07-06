@@ -4,5 +4,5 @@
   # setup desktop
   - import_tasks: software/x11.yml
   - import_tasks: software/graphical_utilities.yml
-  - import_tasks: software/gaphor.yml
+    #  - import_tasks: software/gaphor.yml
   - import_tasks: software/browser.yml
