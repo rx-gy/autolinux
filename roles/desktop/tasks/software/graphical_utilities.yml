@@ -2,8 +2,10 @@
   tags: x11,dwm,graphical,utilities
   apt:
     name:
+      - abiword
       - evince
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
+      - gnumeric
       - gparted           # disk management
       - jgmenu
       - keepassxc-full
