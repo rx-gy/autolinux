@@ -1,5 +1,6 @@
 all:
    hosts:
+      portalsys:
       flack:
       mars:
       mercury:
@@ -24,6 +25,7 @@ graphical:
 server:
    hosts:
       gloaming:
+      portalsys:
 
 nvidia:
    hosts:
