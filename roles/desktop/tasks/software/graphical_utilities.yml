@@ -11,10 +11,14 @@
       - keepassxc-full
       - libx11-dev        # xclickroot dependency
       - mesa-utils        # useful for glxgears
+      - pavucontrol
       - pulseaudio
+      - qimgv
       - remmina
       - rxvt-unicode      # fallback terminal
+      - sqlitebrowser
       - syncthingtray
+      - thunar
       - wireshark
       - xclip
       - xrdp

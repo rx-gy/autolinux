@@ -5,10 +5,14 @@
     name:
       - 7zip
       - at
+      - bc
       - btop
       - colordiff
       - curl
       - bind9-dnsutils
+      - boxes
+      - busybox
+      - imagemagick
       - iotop
       - lm-sensors
       - lsof
@@ -19,11 +23,15 @@
       - network-manager
       - nfs-common
       - nmap
+      - qrencode
       - ranger
       - rename
       - rsync
       - screen
       - sshfs
+      - sqlite3
+      - sqlite3-tools
+      - sqlite-utils
       - syncthing
       - tcpdump
       - tmux
