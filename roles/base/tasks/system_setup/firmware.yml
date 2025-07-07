@@ -4,6 +4,7 @@
     name:
       - firmware-linux-nonfree
     state: latest
+  when: inventory_hostname not in groups['virtual']
 - name: system setup | wireless
   tags: system,firmware,wireless
   apt:

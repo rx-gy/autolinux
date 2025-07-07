@@ -12,6 +12,9 @@ all:
 # uncomment localhost to capture new/nonspecific hosts
 #      localhost:
 
+virtual:
+   hosts:
+      portalsys:
 graphical:
    hosts:
       flack:
