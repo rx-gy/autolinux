@@ -1,6 +1,6 @@
 
 - name: base | audiobookshelf | keys   
-  when: inventory_hostname in groups['server']
+  when: inventory_hostname in groups['audiobookshelf']
   ansible.builtin.get_url:     
     url: https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg
     dest: /etc/apt/trusted.gpg.d/adb-archive-keyring.asc
@@ -8,14 +8,14 @@
     force: true
 
 - name: base | audiobookshelf | repo
-  when: inventory_hostname in groups['server']
+  when: inventory_hostname in groups['audiobookshelf']
   apt_repository:
     repo: deb https://advplyr.github.io/audiobookshelf-ppa ./
     state: present
     update_cache: yes
 
 - name: base | audibookshelf 
-  when: inventory_hostname in groups['server']
+  when: inventory_hostname in groups['audiobookshelf']
   apt:
     name:
       - audiobookshelf

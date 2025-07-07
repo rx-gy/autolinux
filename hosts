@@ -22,10 +22,9 @@ graphical:
       nebula:
       kitsune:
 
-server:
+audiobookshelf:
    hosts:
       gloaming:
-      portalsys:
 
 nvidia:
    hosts:
