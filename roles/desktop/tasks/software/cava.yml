@@ -1,0 +1,53 @@
+- name: desktop | cava-dependencies 
+  tags: desktop, cava, vu, pulseaudio
+  apt:
+    name:
+      - build-essential 
+      - libfftw3-dev 
+      - libasound2-dev
+      - libpulse-dev
+      - libtool 
+      - automake
+      - libiniparser-dev
+      - libsdl2-2.0-0
+      - libsdl2-dev
+      - libpipewire-0.3-dev
+      - libjack-jackd2-dev pkgconf
+    state: latest
+
+- name: desktop | git cava
+  git:
+   repo: "https://github.com/karlstav/cava"
+   dest: "/home/j4ck/GIT/cava/"
+  
+
+- name: desktop | autogen | cava
+  command:
+    argv:
+      - "/usr/bin/bash"
+      - "autogen.sh"
+  args:
+    chdir: "/home/j4ck/GIT/cava"
+
+- name: desktop | configure | cava
+  command:
+    argv:
+      - "/usr/bin/bash"
+      - "configure"
+  args:
+    chdir: "/home/j4ck/GIT/cava"
+
+- name: desktop | make | cava
+  command:
+    argv:
+      - "/usr/bin/make"
+  args:
+    chdir: "/home/j4ck/GIT/cava"
+
+- name: desktop | install | cava
+  command:
+    argv:
+      - "/usr/bin/make"
+      - "install"
+  args:
+    chdir: "/home/j4ck/GIT/cava"

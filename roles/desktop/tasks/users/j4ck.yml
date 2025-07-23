@@ -19,6 +19,7 @@
   with_items:
     - { dir: '/home/j4ck/.config/i3' }
     - { dir: '/home/j4ck/.config/jgmenu/' }
+    - { dir: '/home/j4ck/.config/alacritty/' }
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
@@ -35,6 +36,7 @@
     - { src: 'users/j4ck/xsession', dst: '/home/j4ck/.xsession' }
     - { src: 'users/j4ck/jgmenu/jgmenurc', dst: '/home/j4ck/.config/jgmenu/jgmenurc' }
     - { src: 'users/j4ck/jgmenu/append.csv', dst: '/home/j4ck/.config/jgmenu/append.csv' }
+    - { src: 'users/j4ck/alacritty.toml', dst: '/home/j4ck/.config/alacritty/alacritty.toml' }
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles

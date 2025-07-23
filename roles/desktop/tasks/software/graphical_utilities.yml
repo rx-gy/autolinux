@@ -3,6 +3,7 @@
   apt:
     name:
       - abiword
+      - alacritty
       - evince
       - freecad           # mainline freecad - see freecad-source.yml for dev installation
       - gnumeric

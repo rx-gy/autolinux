@@ -32,6 +32,8 @@
   tags: desktop,x11,xorg,xserver
   apt:
     name: 
+      - feh     # desktop background
+      - picom   # compositor
       - xserver-xorg-core
       - xserver-xorg-input-evdev
       - xserver-xorg-input-synaptics
@@ -41,7 +43,6 @@
       - xinit
       - suckless-tools
       - xdotool
-      - feh
 
     state: latest
       

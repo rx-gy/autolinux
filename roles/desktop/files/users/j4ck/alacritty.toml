@@ -1,0 +1,7 @@
+[window]
+opacity = 0.0
+
+[[keyboard.bindings]]
+key = "F" 
+mods = "Control|Shift" 
+action = "ToggleFullScreen"
