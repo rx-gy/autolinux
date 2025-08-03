@@ -1,5 +1,6 @@
 all:
    hosts:
+      panda-ha:
       portalsys:
       flack:
       mars:
@@ -15,6 +16,11 @@ all:
 virtual:
    hosts:
       portalsys:
+
+home_assistant:
+   hosts:
+      panda-ha:
+
 graphical:
    hosts:
       flack:

@@ -16,7 +16,9 @@
   - import_tasks: software/useful_scripts.yml
   - import_tasks: software/audiobookshelf.yml
 
-
+  - name: Include docker.yml depending on group membership
+    include_tasks: docker.yml
+    when: inventory_hostname in groups('home_assistant')
 
 
   rescue:
