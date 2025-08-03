@@ -18,7 +18,7 @@
 
   - name: Include docker.yml depending on group membership
     include_tasks: docker.yml
-    when: inventory_hostname in groups('home_assistant')
+    when: inventory_hostname in groups['home_assistant']
 
 
   rescue:
