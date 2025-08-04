@@ -1,0 +1,8 @@
+
+
+    - name: Install Docker packages
+      apt:
+        name: ['docker', 'docker-cli', 'containerd.io']
+        state: latest
+        update_cache: yes
+
