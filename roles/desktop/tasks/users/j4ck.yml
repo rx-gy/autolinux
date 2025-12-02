@@ -20,6 +20,7 @@
     - { dir: '/home/j4ck/.config/i3' }
     - { dir: '/home/j4ck/.config/jgmenu/' }
     - { dir: '/home/j4ck/.config/alacritty/' }
+    - { dir: '/home/j4ck/.config/touchegg/' }
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
@@ -37,6 +38,7 @@
     - { src: 'users/j4ck/jgmenu/jgmenurc', dst: '/home/j4ck/.config/jgmenu/jgmenurc' }
     - { src: 'users/j4ck/jgmenu/append.csv', dst: '/home/j4ck/.config/jgmenu/append.csv' }
     - { src: 'users/j4ck/alacritty.toml', dst: '/home/j4ck/.config/alacritty/alacritty.toml' }
+    - { src: 'users/j4ck/touchegg.conf', dst: '/home/j4ck/.config/touchegg/touchegg.conf' }
 
 - name: desktop | users | j4ck | dotfiles
   tags: desktop,users,j4ck,dotfiles
