@@ -36,7 +36,7 @@ exec --no-startup-id blueman-applet
 
 exec --no-startup-id syncthingtray
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-
+exec --no-startup-id touchegg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -140,8 +140,8 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # Mars testing
-bindsym $mod+shift+control+KP_Add workspace next
-bindsym $mod+shift+control+KP_Subtract workspace next
+bindsym $mod+shift+control+KP_Add workspace next_on_output
+bindsym $mod+shift+control+KP_Subtract workspace prev_on_output
 bindsym F1 workspace number $ws1
 bindsym F2 workspace number $ws2
 bindsym F3 workspace number $ws3
