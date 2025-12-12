@@ -39,6 +39,11 @@ nvidia:
    hosts:
       mars:
 
+other_de:
+   hosts:
+      mercury:
+
+
 b43:
    hosts:
       nebula:

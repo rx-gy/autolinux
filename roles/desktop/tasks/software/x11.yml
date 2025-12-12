@@ -34,7 +34,7 @@
     name: 
       - feh     # desktop background
       - picom   # compositor
-      - touchegg
+      #- touchegg
       - xserver-xorg-core
       - xserver-xorg-input-evdev
       - xserver-xorg-input-synaptics
