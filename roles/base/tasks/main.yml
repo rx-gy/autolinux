@@ -4,6 +4,9 @@
 
   # Make sure users exist on the system
   - import_tasks: users/j4ck.yml
+  - name: elizabeth
+    include_tasks: users/elizabeth.yml
+    when: inventory_hostname in groups['other_de'] 
 
   # Perform system setup tasks:
   - import_tasks: system_setup/clock.yml

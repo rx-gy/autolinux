@@ -1,0 +1,86 @@
+- name: users | install shell
+  tags: packages,system,settings
+  apt:
+    state: latest
+    name:
+      - zsh
+
+- name: users | elizabeth | create group
+  tags: groups,elizabeth,users
+  group:
+    name: elizabeth
+    state: present
+
+- name: users | elizabeth | create user
+  tags: elizabeth,users
+  ansible.builtin.user:
+    name: elizabeth
+    create_home: yes
+    groups: elizabeth,audio
+    append: yes
+    comment: "Elizabeth"
+    password: "{{ elizabeth_passwd }}"
+    shell: /usr/bin/zsh
+
+- name: users | elizabeth | create user directories
+  tags: dotfiles,elizabeth,ssh,users
+  file:
+    path: "{{ item.dir }}"
+    state: directory
+    owner: elizabeth
+    group: elizabeth
+    mode: 0700
+  with_items:
+    - { dir: '/home/elizabeth/GIT' }
+    - { dir: '/home/elizabeth/.ssh' }
+    - { dir: '/home/elizabeth/.local' }
+    - { dir: '/home/elizabeth/.config/systemd/user/' }
+
+- name: users | shell | oh-my-zsh
+  tags: users,elizabeth,zsh
+  git:
+    repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
+    dest: '/home/elizabeth/.oh-my-zsh'
+    force: no
+  become: yes
+  become_user: elizabeth
+
+- name: users | shell | powerlevel10k
+  tags: user,elizabeth,zsh
+  git:
+    repo: 'https://github.com/romkatv/powerlevel10k.git/'
+    dest: '/home/elizabeth/.oh-my-zsh/themes/powerlevel10k'
+    depth: 1
+  become: yes
+  become_user: elizabeth
+
+- name: users | shell | oh-my-tmux
+  tags: user,elizabeth,tmux
+  git:
+    repo: 'https://github.com/gpakosz/.tmux.git'
+    dest: '/home/elizabeth/GIT/oh-my-tmux'
+  become: yes
+  become_user: elizabeth
+
+- name: users | shell | oh-my-config
+  tags: user,elizabeth,zsh
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    force: true
+    owner: elizabeth
+    group: elizabeth
+    mode: 0755
+  with_items:
+      - { src: 'users/elizabeth/p10k.zsh', dest: '/home/elizabeth/.p10k.zsh' }
+      - { src: 'users/elizabeth/zshrc', dest: '/home/elizabeth/.zshrc' }
+      - { src: 'users/elizabeth/tmux.conf.local', dest: '/home/elizabeth/.tmux.conf.local' }
+      - { src: 'users/elizabeth/tmux.conf', dest: '/home/elizabeth/.tmux.conf' }
+
+- name: users | shell | powerlevel10k config
+  tags: user,elizabeth,zsh
+  lineinfile:
+    path: '/home/elizabeth/.zshrc'
+    regexp: '^ZSH_THEME='
+    line: 'ZSH_THEME=powerlevel10k/powerlevel10k'
+

@@ -58,6 +58,15 @@
 
     state: latest
 
+- name: desktop | lightdm,i3
+  tags: desktop,i3
+  when: inventory_hostname in groups['other_de']
+  apt:
+    name: 
+      - cinnamon
+
+    state: latest
+
 - name: desktop | gnome
   tags: desktop,gnome
   when: inventory_hostname == "kitsune"
