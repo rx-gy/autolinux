@@ -58,7 +58,7 @@
 
     state: latest
 
-- name: desktop | lightdm,i3
+- name: desktop | cinnamon
   tags: desktop,i3
   when: inventory_hostname in groups['other_de']
   apt:
