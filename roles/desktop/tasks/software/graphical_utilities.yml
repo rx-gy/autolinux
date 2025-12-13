@@ -43,3 +43,21 @@
     make: /usr/bin/make
   when: gitclone.changed
 
+
+- name: Add microsoft vscode repo
+  block:
+    - name: get ms repo key
+      ansible.builtin.get_url:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/apt/keyrings/microsoft.asc
+    - name: add the ms repo
+      ansible.builtin.apt_repository:
+        repo: deb [signed-by=/etc/apt/keyrings/microsoft.asc] https://packages.microsoft.com/repos/code stable main
+        state: present
+    - name: install vscode
+      apt:
+        name:
+          - code
+        state: latest
+
+
