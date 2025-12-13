@@ -1,6 +1,9 @@
 - block:
   # setup user - only j4ck at present
   - import_tasks: users/j4ck.yml
+  - name: elizabeth
+    include_tasks: users/elizabeth.yml
+    when: inventory_hostname in groups['other_de'] 
   # setup desktop
   - import_tasks: software/x11.yml
   - import_tasks: software/graphical_utilities.yml

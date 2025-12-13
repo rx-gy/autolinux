@@ -1,0 +1,80 @@
+
+- name: desktop | users | elizabeth | fonts
+  tags: desktop,users,elizabeth,fonts
+  copy:
+    src: users/elizabeth/fonts/
+    dest: /home/elizabeth/.fonts/
+    owner: elizabeth
+    group: elizabeth
+    mode: 0440
+
+
+- name: desktop | users | elizabeth | folders
+  file:
+    path: "{{ item.dir }}"
+    state: directory
+    mode: 0755
+    owner: elizabeth
+    group: elizabeth
+  with_items:
+    - { dir: '/home/elizabeth/.config/i3' }
+    - { dir: '/home/elizabeth/.config/jgmenu/' }
+    - { dir: '/home/elizabeth/.config/alacritty/' }
+    - { dir: '/home/elizabeth/.config/touchegg/' }
+
+- name: desktop | users | elizabeth | dotfiles
+  tags: desktop,users,elizabeth,dotfiles
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: elizabeth
+    group: elizabeth
+    mode: 0440
+    force: no
+  with_items:
+    - { src: 'users/elizabeth/Xdefaults', dst: '/home/elizabeth/.Xdefaults' }
+    - { src: 'users/elizabeth/xinitrc', dst: '/home/elizabeth/.xinitrc' }
+    - { src: 'users/elizabeth/xsession', dst: '/home/elizabeth/.xsession' }
+    - { src: 'users/elizabeth/jgmenu/jgmenurc', dst: '/home/elizabeth/.config/jgmenu/jgmenurc' }
+    - { src: 'users/elizabeth/jgmenu/append.csv', dst: '/home/elizabeth/.config/jgmenu/append.csv' }
+    - { src: 'users/elizabeth/alacritty.toml', dst: '/home/elizabeth/.config/alacritty/alacritty.toml' }
+    - { src: 'users/elizabeth/touchegg.conf', dst: '/home/elizabeth/.config/touchegg/touchegg.conf' }
+
+- name: desktop | users | elizabeth | dotfiles
+  tags: desktop,users,elizabeth,dotfiles
+  when: inventory_hostname not in groups['nvidia']
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: elizabeth
+    group: elizabeth
+    mode: 0440
+    force: no
+  with_items:
+    - { src: 'users/elizabeth/Xresources', dst: '/home/elizabeth/.Xresources' }
+    - { src: 'users/elizabeth/i3config', dst: '/home/elizabeth/.config/i3/config' }
+
+- name: desktop | users | elizabeth | resources
+  tags: desktop,users,elizabeth,scripts
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    owner: elizabeth
+    group: elizabeth
+    mode: 0755
+    force: no
+  with_items:
+    - { src: 'users/elizabeth/scripts/', dst: '/usr/local/bin/' }
+    - { src: 'users/elizabeth/backgrounds/{{ inventory_hostname }}.png', dst: '/home/elizabeth/.local/bg.png' }
+
+- name: desktop | users | elizabeth | i3-wm config
+  ansible.builtin.lineinfile:
+    path: /home/elizabeth/.config/i3/config
+    regexp: '^exec --no-startup-id feh.*'
+    line: 'exec --no-startup-id feh --bg-center /home/elizabeth/.local/bg.png'
+#- name: desktop | users | elizabeth | i3-wm config
+#  ansible.builtin.blockinfile:
+#    path: /home/elizabeth/.config/i3/config
+
+
+
