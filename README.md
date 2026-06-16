@@ -13,11 +13,11 @@
 - [x] ansible-pull for live system updates
 
 ## Ansible tasks
-- [ ] ssh config
+- [x] ssh config
 - [ ] sshd config
 - [x] fonts
 - [x] urxvt settings
-- [ ] oh-my-zsh and powerlevel10k
+- [x] oh-my-zsh and powerlevel10k
 - [x] i3wm with basic customisation
 - [ ] possible switch to dwm...
 - [ ] syncthing
