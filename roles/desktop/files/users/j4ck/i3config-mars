@@ -37,14 +37,21 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id syncthingtray
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
-exec --no-startup-id touchegg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+## OLD AUDIO
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+## NEW AUDIO
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/pulse-playback-volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/pulse-playback-volume down
+bindsym XF86Tools  exec --no-startup-id ~/.local/bin/pulse-playback-volume next
+bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/pulse-playback-volume mute
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -128,6 +135,12 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# nerd-dictation
+bindsym $mod+u exec "/home/j4ck/GIT/nerd-dictation/nerd-dictation begin"
+bindsym $mod+i exec "/home/j4ck/GIT/nerd-dictation/nerd-dictation end"
+bindsym $mod+p exec "/home/j4ck/GIT/nerd-dictation/nerd-console.sh"
+
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -140,11 +153,9 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-#touchegg integration
+# Mars testing
 bindsym $mod+shift+control+KP_Add workspace next_on_output
 bindsym $mod+shift+control+KP_Subtract workspace prev_on_output
-
-# Mars testing
 bindsym F1 workspace number $ws1
 bindsym F2 workspace number $ws2
 bindsym F3 workspace number $ws3
@@ -220,7 +231,7 @@ for_window [class="^.*"] border pixel 1
 # finds out, if available)
 bar {
         status_command i3status
-	tray_output HDMI-0
+	#tray_output HDMI-0
 }
 
 assign [class="Alacritty"] 2
